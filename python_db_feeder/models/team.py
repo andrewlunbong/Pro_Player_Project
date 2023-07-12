@@ -1,13 +1,14 @@
 class Team:
 
-  def  __init__ (self, name, att, defe, mid, ovr, link, league_id=None, id=None ):
+  def  __init__ (self, name, link, att, defe, mid, ovr, badge, league, id = None ):
     self.name = name
+    self.link = link
     self.att = att
     self.defe = defe
     self.mid = mid
     self.ovr = ovr
-    self.link = link
-    self.league_id = league_id
+    self.badge = badge
+    self.league = league
     self.id = id
   
     
