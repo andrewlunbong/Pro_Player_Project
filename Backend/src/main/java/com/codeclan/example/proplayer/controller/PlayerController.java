@@ -18,4 +18,6 @@ public class PlayerController {
 
     @GetMapping("/players")
     public List<Player> getAllPlayers(){ return playerRepository.findAll();}
+
+
 }
