@@ -21,6 +21,7 @@ CREATE TABLE teams (
 
 CREATE TABLE players (
     id SERIAL PRIMARY KEY,
+    user_player BOOLEAN,
     name VARCHAR(255),
     image VARCHAR(255),
     nationality VARCHAR(255),
