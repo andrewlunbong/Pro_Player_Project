@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from team import Team
+from models.team import Team
 
 url = "https://www.fifaindex.com/teams/?league=14&order=desc"
 
