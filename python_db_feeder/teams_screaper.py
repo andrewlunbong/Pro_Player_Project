@@ -1,19 +1,26 @@
 import requests
 from bs4 import BeautifulSoup
-from team import Team
+from models.team import Team
+import repositories.league_repository as league_repository
+import repositories.team_repository as team_repository
+from models.league import League
 
-url = "https://www.fifaindex.com/teams/?league=14&order=desc"
 
-def team_scrapper (url):
+efl_league = League("EFL Championship")
+league_repository.save(efl_league)
+premier_league = League("Premier League")
+league_repository.save(premier_league)
+
+def team_scrapper (url, league):
 
     html = requests.get(url)
     html_soup = BeautifulSoup(html.content,"html.parser")
     ### EXTRACT LOGOS ###
     number_of_teams = len(html_soup.findAll("img"))
-    team_logos = []
+    team_badges = []
     for i in range(number_of_teams):
-        src = html_soup.select("img")[0].attrs["src"]
-        team_logos.append(src)
+        src = html_soup.select("img")[i].attrs["src"]
+        team_badges.append(src)
 
     ### EXTRACT NAME AND LINK ###
 
@@ -46,19 +53,18 @@ def team_scrapper (url):
 
     all_teams=[]
     for i in range(len(names_list)):
-        a = Team(names_list[i], all_data_titles[0][i], all_data_titles[1][i], all_data_titles[2][i],
-                  all_data_titles[3][i])
+        a = Team(names_list[i], links_list[i], int(all_data_titles[0][i]), int(all_data_titles[1][i]), int(all_data_titles[2][i]),
+                  int(all_data_titles[3][i]), team_badges[i], league)
         all_teams.append(a)
-    return all_teams, links_list
+    return all_teams
 
-efl_teams, efl_links= team_scrapper("https://www.fifaindex.com/teams/?league=14&order=desc")
-premier_teams, premier_links= team_scrapper("https://www.fifaindex.com/teams/?league=13&order=desc")
+efl_teams= team_scrapper("https://www.fifaindex.com/teams/?league=14&order=desc", efl_league)
+premier_teams= team_scrapper("https://www.fifaindex.com/teams/?league=13&order=desc", premier_league)
 
-print(premier_teams[1].name)
+for team in efl_teams:
+    team_repository.save(team)
 
-print(efl_teams[1].name)
+for team in premier_teams:
+    team_repository.save(team)
 
-for i in range(len(premier_teams)):
-    print(premier_teams[i].name)
-
-print(efl_links)
+# url = "https://www.fifaindex.com/teams/?league=14&order=desc"
