@@ -14,6 +14,8 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path='/decision' element = {<Decision/>}/>
+
         <Route path="/" element={<HomePage/>} />
       </Routes>
     </Router>
