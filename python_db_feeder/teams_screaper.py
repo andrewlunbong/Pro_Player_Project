@@ -46,8 +46,8 @@ def team_scrapper (url):
 
     all_teams=[]
     for i in range(len(names_list)):
-        a = Team(names_list[i], links_list[i], all_data_titles[0][i], all_data_titles[1][i], all_data_titles[2][i],
-                  all_data_titles[3][i], team_badges[i])
+        a = Team(names_list[i], links_list[i], int(all_data_titles[0][i]), int(all_data_titles[1][i]), int(all_data_titles[2][i]),
+                  int(all_data_titles[3][i]), team_badges[i])
         all_teams.append(a)
     return all_teams, links_list
 
