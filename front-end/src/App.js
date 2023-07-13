@@ -15,6 +15,8 @@ function App() {
         <Route path="/squad" element={<SquadPage />} />
         <Route path="/player" element={<PlayerSeasonStats />} />
         <Route path='/decision' element = {<Decision/>}/>
+        <Route path='/timer' element= {<Timer/>}/>
+        
       </Routes>
     </Router>
   );
