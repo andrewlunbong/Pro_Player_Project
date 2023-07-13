@@ -32,7 +32,7 @@ def player_scrapper(team):
             ### EXTRACT NAME ON PLAYERS PAGE ###
 
         player_name = html_player_soup.find("h1").text
-        player_name = player_name.replace("FIFA 23 Career Mode Ratings", "")
+        player_name = player_name.replace(" FIFA 23 Career Mode Ratings", "")
 
             ### EXTRACT IMAGE ON PLAYERS PAGE ###
 

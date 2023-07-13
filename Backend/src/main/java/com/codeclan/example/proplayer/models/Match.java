@@ -16,62 +16,118 @@ public class Match implements Serializable {
     @Column(name = "date")
     private String date;
 
+    @Column(name = "is_finished")
+    private Boolean isFinished;
 
     @ManyToOne
     @JsonIgnoreProperties({"matches"})
-    @JoinColumn(name="team1_id", nullable=false)
-    private Team team1;
+    @JoinColumn(name="team_home_id", nullable=false)
+    private Team teamHome;
+
+    @Column(name = "team_home_goals")
+    private int teamHomeGoals;
 
     @ManyToOne
     @JsonIgnoreProperties({"matches"})
-    @JoinColumn(name="team2_id", nullable=false)
-    private Team team2;
+    @JoinColumn(name="team_away_id", nullable=false)
+    private Team teamAway;
+
+    @Column(name = "team_away_goals")
+    private int teamAwayGoals;
 
     @ManyToOne
     @JsonIgnoreProperties({"matches"})
     @JoinColumn(name= "league_id", nullable=false )
     private League league;
 
-    public Match(){
+    @JsonIgnoreProperties({"matches"})
+    @ManyToOne
+    @JoinColumn(name = "season_id", nullable = false)
+    private Season season;
 
+    public Match(){
     }
 
-    public Match(String date, Team team1, Team team2, League league) {
+    public Match(String date, Boolean isFinished, Team teamHome, int teamHomeGoals, Team teamAway, int teamAwayGoals, League league, Season season) {
         this.date = date;
-        this.team1 = team1;
-        this.team2 = team2;
+        this.isFinished = isFinished;
+        this.teamHome = teamHome;
+        this.teamHomeGoals = teamHomeGoals;
+        this.teamAway = teamAway;
+        this.teamAwayGoals = teamAwayGoals;
         this.league = league;
+        this.season = season;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getDate() {
         return date;
     }
 
-    public Team getTeam1() {
-        return team1;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public Team getTeam2() {
-        return team2;
+    public Boolean getFinished() {
+        return isFinished;
+    }
+
+    public void setFinished(Boolean finished) {
+        isFinished = finished;
+    }
+
+    public Team getTeamHome() {
+        return teamHome;
+    }
+
+    public void setTeamHome(Team teamHome) {
+        this.teamHome = teamHome;
+    }
+
+    public int getTeamHomeGoals() {
+        return teamHomeGoals;
+    }
+
+    public void setTeamHomeGoals(int teamHomeGoals) {
+        this.teamHomeGoals = teamHomeGoals;
+    }
+
+    public Team getTeamAway() {
+        return teamAway;
+    }
+
+    public void setTeamAway(Team teamAway) {
+        this.teamAway = teamAway;
+    }
+
+    public int getTeamAwayGoals() {
+        return teamAwayGoals;
+    }
+
+    public void setTeamAwayGoals(int teamAwayGoals) {
+        this.teamAwayGoals = teamAwayGoals;
     }
 
     public League getLeague() {
         return league;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public void setTeam1(Team team1) {
-        this.team1 = team1;
-    }
-
-    public void setTeam2(Team team2) {
-        this.team2 = team2;
-    }
-
     public void setLeague(League league) {
         this.league = league;
+    }
+
+    public Season getSeason() {
+        return season;
+    }
+
+    public void setSeason(Season season) {
+        this.season = season;
     }
 }

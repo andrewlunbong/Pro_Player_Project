@@ -8,6 +8,7 @@ import java.util.List;
 
 @Repository
 public interface MatchRepository extends JpaRepository<Match, Long> {
-    List<Match> findByTeam1_Id(Long id);
+    List<Match> findBySeason_Id(Long id);
+
 
 }

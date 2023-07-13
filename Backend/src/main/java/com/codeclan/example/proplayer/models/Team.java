@@ -37,6 +37,21 @@ public class Team implements Serializable {
     @Column(name = "badge")
     private String badge;
 
+    @Column(name = "goals")
+    private Integer goals;
+
+    @Column(name = "wins")
+    private Integer wins;
+
+    @Column(name = "loses")
+    private Integer loses;
+
+    @Column(name = "draws")
+    private Integer draws;
+
+    @Column(name = "points")
+    private Integer points;
+
     @JsonIgnoreProperties({"teams"})
     @ManyToOne
     @JoinColumn(name = "league_id", nullable = false)
@@ -52,10 +67,9 @@ public class Team implements Serializable {
 
 
     public Team() {
-
     }
 
-    public Team(String name, String link, int att, int defe, int mid, int ovr, String badge, League league) {
+    public Team(String name, String link, int att, int defe, int mid, int ovr, String badge, Integer goals, Integer wins, Integer loses, Integer draws, Integer points, League league) {
         this.name = name;
         this.link = link;
         this.att = att;
@@ -63,6 +77,11 @@ public class Team implements Serializable {
         this.mid = mid;
         this.ovr = ovr;
         this.badge = badge;
+        this.goals = goals;
+        this.wins = wins;
+        this.loses = loses;
+        this.draws = draws;
+        this.points = points;
         this.league = league;
         this.players = new ArrayList<>();
         this.matches = new ArrayList<>();
@@ -154,6 +173,46 @@ public class Team implements Serializable {
 
     public void setMatches(List<Match> matches) {
         this.matches = matches;
+    }
+
+    public Integer getGoals() {
+        return goals;
+    }
+
+    public void setGoals(Integer goals) {
+        this.goals = goals;
+    }
+
+    public Integer getWins() {
+        return wins;
+    }
+
+    public void setWins(Integer wins) {
+        this.wins = wins;
+    }
+
+    public Integer getLoses() {
+        return loses;
+    }
+
+    public void setLoses(Integer loses) {
+        this.loses = loses;
+    }
+
+    public Integer getDraws() {
+        return draws;
+    }
+
+    public void setDraws(Integer draws) {
+        this.draws = draws;
+    }
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public void setPoints(Integer points) {
+        this.points = points;
     }
 }
 

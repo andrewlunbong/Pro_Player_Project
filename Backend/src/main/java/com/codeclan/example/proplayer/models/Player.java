@@ -13,10 +13,8 @@ public class Player implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
-
     @Column(name = "user_player")
     private Boolean user_player ;
-
     @Column(name = "name")
     private String name ;
     @Column(name = "image")
@@ -103,7 +101,12 @@ public class Player implements Serializable {
     private int penalties ;
     @Column(name = "volleys")
     private int volleys ;
-
+    @Column(name = "goals")
+    private Integer goals ;
+    @Column(name = "assistance")
+    private Integer assistance ;
+    @Column(name = "appearances")
+    private Integer appearances ;
     @JsonIgnoreProperties({"players"})
     @ManyToOne
     @JoinColumn(name="team_id", nullable=false)
@@ -113,7 +116,7 @@ public class Player implements Serializable {
 
     }
 
-    public Player(Boolean user_player, String name, String image, String nationality, String nationality_image, int overall, int height, int weight, String preferred_foot, String birth_date, int age, String position, int kit_number, int positioning, int diving, int handling, int kicking, int reflexes, int reactions, int composure, int slide_tackle, int stand_tackle, int aggression, int interceptions, int strength, int balance, int jumping, int heading, int ball_control, int vision, int crossing, int short_pass, int long_pass, int stamina, int agility, int long_shot, int dribbling, int at_positioning, int sprint_speed, int shot_power, int finishing, int fk_accuracy, int penalties, int volleys, Team team) {
+    public Player(Boolean user_player, String name, String image, String nationality, String nationality_image, int overall, int height, int weight, String preferred_foot, String birth_date, int age, String position, int kit_number, int positioning, int diving, int handling, int kicking, int reflexes, int reactions, int composure, int slide_tackle, int stand_tackle, int aggression, int interceptions, int strength, int balance, int jumping, int heading, int ball_control, int vision, int crossing, int short_pass, int long_pass, int stamina, int agility, int long_shot, int dribbling, int at_positioning, int sprint_speed, int shot_power, int finishing, int fk_accuracy, int penalties, int volleys, Integer goals, Integer assistance, Integer appearances, Team team) {
         this.user_player = user_player;
         this.name = name;
         this.image = image;
@@ -158,6 +161,9 @@ public class Player implements Serializable {
         this.fk_accuracy = fk_accuracy;
         this.penalties = penalties;
         this.volleys = volleys;
+        this.goals = goals;
+        this.assistance = assistance;
+        this.appearances = appearances;
         this.team = team;
     }
 
@@ -527,5 +533,29 @@ public class Player implements Serializable {
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    public Integer getGoals() {
+        return goals;
+    }
+
+    public void setGoals(Integer goals) {
+        this.goals = goals;
+    }
+
+    public Integer getAssistance() {
+        return assistance;
+    }
+
+    public void setAssistance(Integer assistance) {
+        this.assistance = assistance;
+    }
+
+    public Integer getAppearances() {
+        return appearances;
+    }
+
+    public void setAppearances(Integer appearances) {
+        this.appearances = appearances;
     }
 }
