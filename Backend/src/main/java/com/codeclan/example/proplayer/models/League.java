@@ -3,13 +3,14 @@ package com.codeclan.example.proplayer.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "leagues")
 
-public class League {
+public class League implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

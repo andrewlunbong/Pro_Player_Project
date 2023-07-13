@@ -3,10 +3,11 @@ package com.codeclan.example.proplayer.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "matches")
-public class Match {
+public class Match implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
