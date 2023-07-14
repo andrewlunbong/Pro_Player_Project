@@ -33,6 +33,7 @@ CREATE TABLE players (
     birth_date VARCHAR(255),
     age INT,
     position VARCHAR(255),
+    substitute BOOLEAN,
     kit_number INT,
     positioning INT,
     diving INT,

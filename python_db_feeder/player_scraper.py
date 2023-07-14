@@ -17,13 +17,18 @@ def player_scrapper(team):
     players_team_soup = html_soup.find("tbody")
 
     players_links_td = players_team_soup.find_all("td", attrs= {"data-title": "Name"})
+    players_position_td = players_team_soup.find_all("td", attrs= {"data-title": "Position"})
+    number_of_player = len(players_team_soup.find_all("td", attrs= {"data-title": "Name"}))
 
         ### EXTRACT LINKS FOR PLAYERS IN TEAM PAGE ###
     player_links = []
 
-    for player_link_td in players_links_td:
-        player_link = "https://www.fifaindex.com" + player_link_td.select("a")[0].attrs["href"]
-        player_links.append(player_link)
+    for i in range(number_of_player):
+        player_position = players_position_td[i].text
+        if player_position != "Res":
+            player_link_td = players_links_td[i]
+            player_link = "https://www.fifaindex.com" + player_link_td.select("a")[0].attrs["href"]
+            player_links.append(player_link)
 
     for player_link in player_links:
         html_player = requests.get(player_link)
@@ -32,7 +37,7 @@ def player_scrapper(team):
             ### EXTRACT NAME ON PLAYERS PAGE ###
 
         player_name = html_player_soup.find("h1").text
-        player_name = player_name.replace("FIFA 23 Career Mode Ratings", "")
+        player_name = player_name.replace(" FIFA 23 Career Mode Ratings", "")
 
             ### EXTRACT IMAGE ON PLAYERS PAGE ###
 
@@ -59,6 +64,10 @@ def player_scrapper(team):
         player_DOB = player_characteristics[4].text
         player_age = player_characteristics[5].text
         player_position = player_characteristics[16].text
+        player_substitute = False
+        if player_position == "Sub":
+            player_substitute = True
+            player_position = player_characteristics[6].find("span").text
         player_kit_number = player_characteristics[17].text
 
             ### EXTRACT GOAL ALL FEATURES ON PLAYERS PAGE ###
@@ -121,7 +130,7 @@ def player_scrapper(team):
         player_at_penalties = str([feature.replace(list_AT_features[6],"") for feature in player_features if list_AT_features[6] in feature][0])
         player_at_volleys = str([feature.replace(list_AT_features[7],"") for feature in player_features if list_AT_features[7] in feature][0])
 
-        player_ready = Player( False, player_name, player_img, player_nationality_name, player_nationality_img, int(player_ovr), int(player_height), int(player_weight), player_preferred_foot, player_DOB,  int(player_age), player_position, int(player_kit_number), int(player_GK_positioning), int(player_GK_diving), int(player_GK_handling), int(player_GK_kicking), int(player_GK_reflexes), int(player_GK_reactions), int(player_GK_composure), int(player_DF_slide_tackle), int(player_DF_stand_tackle), int(player_DF_aggression), int(player_DF_interceptions), int(player_DF_strength), int(player_DF_balance), int(player_DF_jumping), int(player_DF_heading), int(player_MF_ball_control), int(player_MF_vision), int(player_MF_crossing), int(player_MF_short_pass), int(player_MF_long_pass), int(player_MF_stamina), int(player_MF_agility), int(player_MF_long_shots), int(player_at_dribbling), int(player_at_att_position), int(player_at_sprint_speed), int(player_at_shot_power), int(player_at_finishing), int(player_at_fk_acc), int(player_at_penalties), int(player_at_volleys), team)
+        player_ready = Player( False, player_name, player_img, player_nationality_name, player_nationality_img, int(player_ovr), int(player_height), int(player_weight), player_preferred_foot, player_DOB,  int(player_age), player_position, player_substitute, int(player_kit_number), int(player_GK_positioning), int(player_GK_diving), int(player_GK_handling), int(player_GK_kicking), int(player_GK_reflexes), int(player_GK_reactions), int(player_GK_composure), int(player_DF_slide_tackle), int(player_DF_stand_tackle), int(player_DF_aggression), int(player_DF_interceptions), int(player_DF_strength), int(player_DF_balance), int(player_DF_jumping), int(player_DF_heading), int(player_MF_ball_control), int(player_MF_vision), int(player_MF_crossing), int(player_MF_short_pass), int(player_MF_long_pass), int(player_MF_stamina), int(player_MF_agility), int(player_MF_long_shots), int(player_at_dribbling), int(player_at_att_position), int(player_at_sprint_speed), int(player_at_shot_power), int(player_at_finishing), int(player_at_fk_acc), int(player_at_penalties), int(player_at_volleys), team)
         all_players_for_team.append(player_ready)
     
     return all_players_for_team
