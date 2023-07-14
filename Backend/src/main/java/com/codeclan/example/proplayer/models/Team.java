@@ -61,8 +61,8 @@ public class Team implements Serializable {
     private List<Player> players;
 
     @OneToMany
-    @JoinColumn(name = "team1_id", referencedColumnName = "id")
-    @JoinColumn(name = "team2_id", referencedColumnName = "id")
+    @JoinColumn(name = "team_home_id", referencedColumnName = "id")
+    @JoinColumn(name = "team_away_id", referencedColumnName = "id")
     private List<Match> matches;
 
 

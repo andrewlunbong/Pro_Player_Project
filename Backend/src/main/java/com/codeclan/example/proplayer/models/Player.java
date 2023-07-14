@@ -37,6 +37,8 @@ public class Player implements Serializable {
     private int age ;
     @Column(name = "position")
     private String position ;
+    @Column(name = "substitute")
+    private Boolean substitute ;
     @Column(name = "kit_number")
     private int kit_number ;
     @Column(name = "positioning")
@@ -116,7 +118,7 @@ public class Player implements Serializable {
 
     }
 
-    public Player(Boolean user_player, String name, String image, String nationality, String nationality_image, int overall, int height, int weight, String preferred_foot, String birth_date, int age, String position, int kit_number, int positioning, int diving, int handling, int kicking, int reflexes, int reactions, int composure, int slide_tackle, int stand_tackle, int aggression, int interceptions, int strength, int balance, int jumping, int heading, int ball_control, int vision, int crossing, int short_pass, int long_pass, int stamina, int agility, int long_shot, int dribbling, int at_positioning, int sprint_speed, int shot_power, int finishing, int fk_accuracy, int penalties, int volleys, Integer goals, Integer assistance, Integer appearances, Team team) {
+    public Player(Boolean user_player, String name, String image, String nationality, String nationality_image, int overall, int height, int weight, String preferred_foot, String birth_date, int age, String position, Boolean substitute, int kit_number, int positioning, int diving, int handling, int kicking, int reflexes, int reactions, int composure, int slide_tackle, int stand_tackle, int aggression, int interceptions, int strength, int balance, int jumping, int heading, int ball_control, int vision, int crossing, int short_pass, int long_pass, int stamina, int agility, int long_shot, int dribbling, int at_positioning, int sprint_speed, int shot_power, int finishing, int fk_accuracy, int penalties, int volleys, Integer goals, Integer assistance, Integer appearances, Team team) {
         this.user_player = user_player;
         this.name = name;
         this.image = image;
@@ -129,6 +131,7 @@ public class Player implements Serializable {
         this.birth_date = birth_date;
         this.age = age;
         this.position = position;
+        this.substitute = substitute;
         this.kit_number = kit_number;
         this.positioning = positioning;
         this.diving = diving;
@@ -269,6 +272,14 @@ public class Player implements Serializable {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public Boolean getSubstitute() {
+        return substitute;
+    }
+
+    public void setSubstitute(Boolean substitute) {
+        this.substitute = substitute;
     }
 
     public int getKit_number() {

@@ -12,6 +12,7 @@ public class PlayerHelper {
         playerToUpdate.setBirth_date(player.getBirth_date());
         playerToUpdate.setAge(player.getAge());
         playerToUpdate.setPosition(player.getPosition());
+        playerToUpdate.setSubstitute(player.getSubstitute());
         playerToUpdate.setKit_number(player.getKit_number());
         playerToUpdate.setPositioning(player.getPositioning());
         playerToUpdate.setDiving(player.getDiving());
