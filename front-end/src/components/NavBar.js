@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu } from 'antd';
-import { useState } from 'react';
 
 const NavBar = () => {
   return (
+
     <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
       <li>
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/player">Player</Link>
+        <Link to="/player">Players</Link>
       </li>
       <li>
         <Link to="/squad">Squad</Link>
