@@ -49,10 +49,10 @@ const Scoring = ()=>{
         scoring = scoringProbabilityTable[getRandomInt(0,10)]
         if (scoring === "S"){
             console.log("GOALLLL")
-            return "Goal"
+            return true
         }else{
             console.log("Missed faking idiot")
-            return "Missed"
+            return false
             // should probs be a bool return
         }
 

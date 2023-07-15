@@ -5,8 +5,8 @@ import { useState } from 'react';
 
 const NavBar = () => {
   return (
-    <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
-      <li>
+    <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 width-xl">
+      <li className='size'>
         <Link to="/">Home</Link>
       </li>
       <li>

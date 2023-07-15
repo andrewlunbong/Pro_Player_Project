@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react"
 
-const Decision=()=>{
-    const dTree = {
+class Decision{
+dTree = {
         node: "s1",
         title: "Here is your opportunity to shine. Take the right decision to help your team win: ",
         children: [
@@ -39,58 +39,31 @@ const Decision=()=>{
             }
         ]
     }
-    const [title, setTitle] = useState(dTree.title)
-    const [options, setOptions] = useState(dTree.children)
-    const [decision,setDecision] = useState("s1")
 
-    
+    constructor(){
 
-    const getTitles =(node)=>{
+    };
+
+    getTitles(node){
         if("s1" === node){
-            return dTree.title
+            return this.dTree.title
         }else if( node === "s3"){
-            return dTree.children[1].title
+            return this.dTree.children[1].title
         }else if(node === "s4"){
-            return dTree.children[1].children[1].title
+            return this.dTree.children[1].children[1].title
         }
     }
-    const getChildren = (node)=>{
+    getChildren(node){
         if("s1" === node){
-            return dTree.children
+            return this.dTree.children
         }else if( node === "s3"){
-            return dTree.children[1].children
+            return this.dTree.children[1].children
         }else if(node === "s4"){
-            return dTree.children[1].children[1].children
+            return this.dTree.children[1].children[1].children
         }
+        return[]
     }
-
-    if (!title || !options){
-        return
-    }
-
-
-    const onClickDecision=(event)=>{
-    
-        console.log(event)
-        
-        setTitle(getTitles(event.target.name))
-        setOptions(getChildren(event.target.name))
-
-    }
- 
-
-    return (
-       
-        <div>
-            <p>{title}</p>
-            <button name={options[0].node} onClick={onClickDecision}>{options[0].title}</button>
-            <button name={options[1].node} onClick={onClickDecision}>{options[1].title}</button>
-            <p>hello</p>
-        </div>
-        
-    )
 
 }
 export default Decision
 
-// value={options[0].node}
