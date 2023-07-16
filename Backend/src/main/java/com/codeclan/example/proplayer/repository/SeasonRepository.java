@@ -1,14 +1,9 @@
 package com.codeclan.example.proplayer.repository;
 
-import com.codeclan.example.proplayer.models.Match;
+import com.codeclan.example.proplayer.models.Season;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public interface MatchRepository extends JpaRepository<Match, Long> {
-
-
-
+public interface SeasonRepository extends JpaRepository<Season, Long> {
 }

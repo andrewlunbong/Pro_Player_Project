@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.size{
-    width: 800px;
+
+.nav-bar-link{
+    width: 350px;
+    /* align-content: center; */
+
 }
 .menu{
     width: 100%;

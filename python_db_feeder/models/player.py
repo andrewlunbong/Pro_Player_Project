@@ -1,6 +1,6 @@
 class Player:
     
-    def __init__(self, user_player, name, image, nationality, nationality_image, overall, height, weight, preferred_foot, birth_date, age, position, kit_number, GK_positioning, GK_diving, GK_handling, GK_kicking, GK_reflexes, GK_reactions, GK_composure, DF_slide_tackle, DF_stand_tackle, DF_aggression, DF_interceptions, DF_strength, DF_balance, DF_jumping, DF_heading, MF_ball_control, MF_vision, MF_crossing, MF_short_pass, MF_long_pass, MF_stamina, MF_agility,MF_long_shot,  AT_dribbling, AT_at_positioning, AT_sprint_speed, AT_shot_power, AT_finishing, AT_fk_accuracy, AT_penalties, AT_volleys, team, id = None):
+    def __init__(self, user_player, name, image, nationality, nationality_image, overall, height, weight, preferred_foot, birth_date, age, position, substitute, kit_number, GK_positioning, GK_diving, GK_handling, GK_kicking, GK_reflexes, GK_reactions, GK_composure, DF_slide_tackle, DF_stand_tackle, DF_aggression, DF_interceptions, DF_strength, DF_balance, DF_jumping, DF_heading, MF_ball_control, MF_vision, MF_crossing, MF_short_pass, MF_long_pass, MF_stamina, MF_agility,MF_long_shot,  AT_dribbling, AT_at_positioning, AT_sprint_speed, AT_shot_power, AT_finishing, AT_fk_accuracy, AT_penalties, AT_volleys, team, id = None):
         self.user_player = user_player
         self.name = name
         self.image = image
@@ -13,6 +13,7 @@ class Player:
         self.birth_date = birth_date
         self.age = age
         self.position = position
+        self.substitute = substitute
         self.kit_number = kit_number
         self.GK_positioning = GK_positioning
         self.GK_diving = GK_diving
