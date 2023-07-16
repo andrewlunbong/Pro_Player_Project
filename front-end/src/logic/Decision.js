@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react"
 
-const Decision=()=>{
-    const dTree = {
+class Decision{
+dTree = {
         node: "s1",
         title: "Here is your opportunity to shine. Take the right decision to help your team win: ",
         children: [
@@ -15,21 +15,21 @@ const Decision=()=>{
                 title: "Pass the ball to one of your teammates>",
                 children:[
                     {
-                        node: "s3",
+                        node: "s4",
                         title: "Pass the ball to Pedro",
                         endType: "Pass"
                     },
                     {
-                        node: "s4",
+                        node: "s5",
                         title: "Dribble the defender to have better chances>",
                         children:[
                             {
-                                node: "s5",
+                                node: "s6",
                                 title: "Shoot you have more ",
                                 endType: "Shoot"
                             },
                             {
-                                node:"s6",
+                                node:"s7",
                                 title: "Pass to Pedri. He is the best option",
                                 endType: "Pass"
                             }
@@ -39,58 +39,34 @@ const Decision=()=>{
             }
         ]
     }
-    const [title, setTitle] = useState(dTree.title)
-    const [options, setOptions] = useState(dTree.children)
-    const [decision,setDecision] = useState("s1")
 
-    
+    constructor(){
 
-    const getTitles =(node)=>{
+    };
+
+    getTitles(node){
         if("s1" === node){
-            return dTree.title
+            return this.dTree.title
         }else if( node === "s3"){
-            return dTree.children[1].title
-        }else if(node === "s4"){
-            return dTree.children[1].children[1].title
+            return this.dTree.children[1].title
+        }else if(node === "s5"){
+            return this.dTree.children[1].children[1].title
+        }else if(node === "s2" || node === "s6"){
+            return this.dTree.children[0].endType
         }
+        return this.dTree.children[1].children[0].endType
     }
-    const getChildren = (node)=>{
+    getChildren(node){
         if("s1" === node){
-            return dTree.children
+            return this.dTree.children
         }else if( node === "s3"){
-            return dTree.children[1].children
+            return this.dTree.children[1].children
         }else if(node === "s4"){
-            return dTree.children[1].children[1].children
+            return this.dTree.children[1].children[1].children
         }
+        return[]
     }
-
-    if (!title || !options){
-        return
-    }
-
-
-    const onClickDecision=(event)=>{
-    
-        console.log(event)
-        
-        setTitle(getTitles(event.target.name))
-        setOptions(getChildren(event.target.name))
-
-    }
- 
-
-    return (
-       
-        <div>
-            <p>{title}</p>
-            <button name={options[0].node} onClick={onClickDecision}>{options[0].title}</button>
-            <button name={options[1].node} onClick={onClickDecision}>{options[1].title}</button>
-            <p>hello</p>
-        </div>
-        
-    )
 
 }
 export default Decision
 
-// value={options[0].node}

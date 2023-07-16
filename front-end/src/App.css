@@ -3,4 +3,13 @@
 @tailwind utilities;
 
 
+.nav-bar-link{
+    width: 350px;
+    /* align-content: center; */
 
+}
+.menu{
+    width: 100%;
+    background-color: aquamarine;
+    /* @apply rounded-box  */
+}

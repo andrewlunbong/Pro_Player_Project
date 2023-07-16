@@ -13,7 +13,8 @@ import ProplayerService from './services/ProplayerService';
 import 'daisyui/dist/full.css';
 import LeaguesPage from './pages/LeaguesPage';
 import TeamPage from './pages/TeamPage'
-
+import Match from './components/match/Match';
+import DisplayDecisions from './components/match/DiaplayDecisions';
 function App() {
 
   // FOR LEAGUES
@@ -60,6 +61,10 @@ function App() {
         {/* <Route path='/players/:playerId' element= 
         {<PlayerDetails
         />}/> */}
+        <Route path="/player" element={<PlayerSeasonStats />} />
+        <Route path='/decision' element = {<DisplayDecisions/>}/>
+        <Route path="/match" element = {<Match/>}/>
+        
       </Routes>
     </Router>
   );

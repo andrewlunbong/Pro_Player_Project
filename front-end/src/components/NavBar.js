@@ -5,16 +5,16 @@ const NavBar = () => {
   return (
 
     <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
-      <li>
+      <li className='nav-bar-link'>
         <Link to="/">Home</Link>
       </li>
-      <li>
-        <Link to="/player">Players</Link>
+      <li className='nav-bar-link'>
+        <Link to="/player">Player</Link>
       </li>
-      <li>
+      <li className='nav-bar-link'>
         <Link to="/squad">Squad</Link>
       </li>
-      <li>
+      <li className='nav-bar-link'>
         <Link to="/calendar">Calendar</Link>
       </li>
     </ul>
