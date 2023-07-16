@@ -1,7 +1,8 @@
 import { message } from "antd";
 import { useEffect, useState, useRef } from "react"
 
-const Game = ()=>{
+
+const Game = ({getOpportunity, getScore })=>{
 
     const teamAOvr = 56;
     const teamBOvr = 60;
@@ -11,6 +12,8 @@ const Game = ()=>{
     const timeout = useRef(0)
     const [teamBScore, setTeamBScore] = useState(0)
     const [player, setPlayer] = useState()
+    const pause = useRef(false)
+    
     // const [ready, setReady] = useState(false)
     // let ready = false
 
@@ -34,18 +37,22 @@ const Game = ()=>{
         // setTeamBScore(prevscore => prevscore + 1)
         const timer =(Math.floor(Math.random()*(10 - 3 + 1)) + 3) * 1500
         console.log(timer)
-        if(eventArray){
+        if(eventArray && !pause.current){
 
             const i = Math.floor(Math.random()*10)
             console.log(i)
             if(eventArray[i] === "TA"){
-                setTeamAScore(prevscore=>prevscore+1)
+                // setTeamAScore(prevscore=>prevscore+1)
+                getScore("A")
             }
             else if( eventArray[i] === "TB"){
-                setTeamBScore(prevscore => prevscore + 1)
+                // setTeamBScore(prevscore => prevscore + 1)
+                getScore("B")
             }
             else if( eventArray[i] === "O"){
                 console.log("It's an opportunity!!!!!!!!!")
+                pause.current = true            
+                getOpportunity();  
             }else{
 
                 console.log("Nothing")

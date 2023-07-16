@@ -1,15 +1,15 @@
 
-const Scoring = ()=>{
+const Scoring = (player, defender, gk)=>{
 
-    const didPlayerScore = (player, defender, gk)=>{
+    
         let scoringProbability = 0;
         let missingProbability = 0;
-        let scoring =""
+        let scoring = ""
         let scoringProbabilityTable = []
-        gkAVG = (gk.positioning + gk.diving + gk.reflexes)/3;
-        defenderAVG = (defender.slideTackle + defender.standTackle)/2;
-        playerAVG =  (player.shotPower + player.finishing + player.attPosition )/ 3;
-        opponentsAVG = (gkAVG + defenderAVG)/2;
+        let gkAVG = (gk.positioning + gk.diving + gk.reflexes)/3;
+        let defenderAVG = (defender.slideTackle + defender.standTackle)/2;
+        let playerAVG =  (player.shotPower + player.finishing + player.attPosition )/ 3;
+        let opponentsAVG = (gkAVG + defenderAVG)/2;
 
         if((opponentsAVG-7)<=playerAVG && (opponentsAVG+7)>=playerAVG){
             scoringProbability = 5;
@@ -57,7 +57,7 @@ const Scoring = ()=>{
         }
 
 
-    }
+    
 
     function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -67,4 +67,8 @@ const Scoring = ()=>{
 
 
 }
+
+
+
+
 export default Scoring

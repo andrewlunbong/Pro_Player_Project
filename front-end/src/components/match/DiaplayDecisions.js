@@ -22,10 +22,14 @@ const  DisplayDecisions = ()=>{
     return (
        
         <div>
+            {(title === "Shoot" || title === "Pass")? 
+            <p>{title}</p>:
+            <div>
             <p>{title}</p>
             <button name={options[0].node} onClick={onClickDecision}>{options[0].title}</button>
             <button name={options[1].node} onClick={onClickDecision}>{options[1].title}</button>
-            <p>hello</p>
+            </div>
+             }
         </div>
         
     )
