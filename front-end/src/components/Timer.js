@@ -1,12 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
-const Timer = ()=>{
+const Timer = ({decisionStatus})=>{
+    let counter = 0
     const [time,setTime] = useState({m:0 , s:0})
+    const [intervStorage, setIntervStorage] = useState()
+    const [timerStatus, setTimerStatus] = useState(decisionStatus)
    
     const start = ()=>{
         run();
-        setInterval(run,30)
+        setIntervStorage(setInterval(run,30))
+    }
+    const pause = ()=>{
+        clearInterval(intervStorage)
     }
     var updateM = time.m, updateS = time.s;
     const run = ()=>{
@@ -19,13 +25,19 @@ const Timer = ()=>{
         return setTime({m: updateM, s: updateS})
 
     }
- 
+    useEffect(()=>{
+        if(counter>0){
+            pause()
+        }
+        counter++
+    },[timerStatus])
 
 
     return(
         <div>
         <h2>{time.m}:{time.s}</h2>
         <button onClick={start}>Start</button>
+        <button onClick={pause}>Pause</button>
         </div>
     )
 
