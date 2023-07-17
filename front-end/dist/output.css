@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -190,11 +190,6 @@ select,
 textarea {
   font-family: inherit;
   /* 1 */
-  -webkit-font-feature-settings: inherit;
-          font-feature-settings: inherit;
-  /* 1 */
-  font-variation-settings: inherit;
-  /* 1 */
   font-size: 100%;
   /* 1 */
   font-weight: inherit;
@@ -342,14 +337,6 @@ ul,
 menu {
   list-style: none;
   margin: 0;
-  padding: 0;
-}
-
-/*
-Reset default styling for dialogs.
-*/
-
-dialog {
   padding: 0;
 }
 
@@ -1643,12 +1630,12 @@ html {
   margin: auto;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .flex {
@@ -1663,32 +1650,12 @@ html {
   width: 83.333333%;
 }
 
-.w-96 {
-  width: 24rem;
-}
-
-.w-1 {
-  width: 0.25rem;
-}
-
-.w-1\/3 {
-  width: 33.333333%;
-}
-
 .w-24 {
   width: 6rem;
 }
 
-.w-1\/4 {
-  width: 25%;
-}
-
-.w-2 {
-  width: 0.5rem;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
+.w-96 {
+  width: 24rem;
 }
 
 .flex-wrap {
@@ -1703,20 +1670,12 @@ html {
   justify-content: center;
 }
 
-.gap-7 {
-  gap: 1.75rem;
-}
-
 .gap-3 {
   gap: 0.75rem;
 }
 
-.gap-y-5 {
-  row-gap: 1.25rem;
-}
-
-.gap-y-10 {
-  row-gap: 2.5rem;
+.gap-7 {
+  gap: 1.75rem;
 }
 
 .overflow-x-auto {
@@ -1756,6 +1715,22 @@ html {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.filter {
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.nav-bar-link{
+  width: 350px;
+  /* align-content: center; */
+}
+
+.menu{
+  width: 100%;
+  background-color: aquamarine;
+  /* @apply rounded-box  */
+}
+
 @media (min-width: 1024px) {
   .lg\:menu-horizontal {
     display: inline-flex;
@@ -1784,6 +1759,3 @@ html {
     border-radius: var(--rounded-box, 1rem);
   }
 }
-
-
-
