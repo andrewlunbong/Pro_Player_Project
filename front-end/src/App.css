@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 
+<<<<<<< HEAD
+=======
 .nav-bar-link{
     width: 350px;
     /* align-content: center; */
@@ -19,3 +21,4 @@
         
     }
   }
+>>>>>>> main

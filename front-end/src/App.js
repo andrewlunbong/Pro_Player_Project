@@ -3,6 +3,19 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './containers/HomePage';
 import CalendarPage from './components/CalendarPage';
+<<<<<<< HEAD
+import SquadPage from './components/SquadPage';
+import Decision from './logic/Decision';
+import  Timer from './components/Timer' ;
+import './App.css';
+import PlayerSeasonStats from './components/PlayerSeasonStats.js';
+import { getProplayerPlayers, updateProplayer, postProplayer } from './services/ProplayerService';
+import 'daisyui/dist/full.css';
+import LeagueTable from './components/LeagueTable';
+import LeagueTableCard from './components/LeagueTableCard';
+
+=======
+>>>>>>> main
 
 import SquadPage from './components/squad/SquadPage';
 import Timer from './components/Timer' ;
@@ -50,6 +63,16 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/calendar" element={<CalendarPage />} />
+<<<<<<< HEAD
+        <Route path="/squad" element={<SquadPage />} />
+        <Route path="/player" element={<PlayerSeasonStats/>} />
+        <Route path="/league-table" element={<LeagueTable/>} />
+        <Route path="/league-table" element={<LeagueTableCard/>} />
+        {/* <Route path='/decision' element = {<Decision/>}/>
+        <Route path='/timer' element= {<Timer/>}/> */}
+        
+        
+=======
         <Route path="/squad" element={<SquadPage squad={teams[1]} />} />
         <Route path="/playerSeasonStats" element={<PlayerSeasonStats />} />
         <Route path='/timer' element= {<Timer/>}/>
@@ -60,6 +83,7 @@ function App() {
         <Route path="/player" element={<PlayerSeasonStats />} />
         <Route path='/decision' element = {<DisplayDecisions/>}/>
         <Route path="/match" element = {<Match/>}/>
+>>>>>>> main
       </Routes>
     </Router>
   );
