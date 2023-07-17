@@ -6,9 +6,9 @@ import repositories.team_repository as team_repository
 from models.league import League
 
 
-efl_league = League("EFL Championship")
+efl_league = League("EFL Championship", "https://logowik.com/content/uploads/images/efl-championship2118.jpg")
 league_repository.save(efl_league)
-premier_league = League("Premier League")
+premier_league = League("Premier League", "https://logowik.com/content/uploads/images/premier-league9031.jpg")
 league_repository.save(premier_league)
 
 def team_scrapper (url, league):
