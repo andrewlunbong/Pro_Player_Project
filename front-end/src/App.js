@@ -6,9 +6,13 @@ import CalendarPage from './components/CalendarPage';
 import SquadPage from './components/SquadPage';
 import Decision from './logic/Decision';
 import  Timer from './components/Timer' ;
-// import './App.css';
+import './App.css';
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
 import { getProplayerPlayers, updateProplayer, postProplayer } from './services/ProplayerService';
+import 'daisyui/dist/full.css';
+import LeagueTable from './components/LeagueTable';
+import LeagueTableCard from './components/LeagueTableCard';
+
 
 function App() {
 
@@ -45,9 +49,12 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/squad" element={<SquadPage />} />
-        <Route path="/player" element={<PlayerSeasonStats />} />
-        <Route path='/decision' element = {<Decision/>}/>
-        <Route path='/timer' element= {<Timer/>}/>
+        <Route path="/player" element={<PlayerSeasonStats/>} />
+        <Route path="/league-table" element={<LeagueTable/>} />
+        <Route path="/league-table" element={<LeagueTableCard/>} />
+        {/* <Route path='/decision' element = {<Decision/>}/>
+        <Route path='/timer' element= {<Timer/>}/> */}
+        
         
       </Routes>
     </Router>
