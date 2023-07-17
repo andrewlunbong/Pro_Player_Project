@@ -30,6 +30,16 @@ function App() {
       })
   }, []);
 
+  const [players, setPlayers] = useState([]);
+
+useEffect(() => {
+  fetch('http://localhost:8080/players')
+    .then(response => response.json())
+    .then(data => {
+      setPlayers(data);
+    });
+}, []);
+
   console.log(teams)
   return (
 
@@ -59,7 +69,7 @@ function App() {
         <Route path="/player" element={<PlayerSeasonStats />} />
         <Route path='/decision' element = {<DisplayDecisions/>}/>
         <Route path="/match" element = {<Match/>}/>
-        <Route path="/submit-form" element ={<SubmitForm teams={teams}/>}/>
+        <Route path="/submit-form" element ={<SubmitForm teams={teams} players={players} />}/>
         <Route path="/teams" element= {<TeamPage/>}/>
       </Routes>
     </Router>

@@ -1141,24 +1141,6 @@ html {
   background-color: hsl(var(--b1) / var(--tw-bg-opacity));
 }
 
-.textarea {
-  flex-shrink: 1;
-  min-height: 3rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  line-height: 2;
-  border-width: 1px;
-  border-color: hsl(var(--bc) / var(--tw-border-opacity));
-  --tw-border-opacity: 0;
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b1) / var(--tw-bg-opacity));
-  border-radius: var(--rounded-btn, 0.5rem);
-}
-
 .btm-nav > * .label {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1657,36 +1639,6 @@ html {
   color: hsl(var(--bc) / 0.6);
 }
 
-.textarea:focus {
-  outline-style: solid;
-  outline-width: 2px;
-  outline-offset: 2px;
-  outline-color: hsl(var(--bc) / 0.2);
-}
-
-.textarea-disabled,
-  .textarea:disabled,
-  .textarea[disabled] {
-  cursor: not-allowed;
-  --tw-border-opacity: 1;
-  border-color: hsl(var(--b2) / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b2) / var(--tw-bg-opacity));
-  --tw-text-opacity: 0.2;
-}
-
-.textarea-disabled::-webkit-input-placeholder, .textarea:disabled::-webkit-input-placeholder, .textarea[disabled]::-webkit-input-placeholder {
-  color: hsl(var(--bc) / var(--tw-placeholder-opacity));
-  --tw-placeholder-opacity: 0.2;
-}
-
-.textarea-disabled::placeholder,
-  .textarea:disabled::placeholder,
-  .textarea[disabled]::placeholder {
-  color: hsl(var(--bc) / var(--tw-placeholder-opacity));
-  --tw-placeholder-opacity: 0.2;
-}
-
 @-webkit-keyframes toast-pop {
   0% {
     -webkit-transform: scale(0.9);
@@ -1860,10 +1812,6 @@ html {
 
 .w-96 {
   width: 24rem;
-}
-
-.w-11\/12 {
-  width: 91.666667%;
 }
 
 .flex-wrap {

@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import {postNewPlayer} from '../services/ProplayerService';
 
-function SubmitForm({teams}) {
+function SubmitForm({teams, players}) {
     console.log(teams)
   const [formData, setFormData] = useState({
     name: '',
     age: '',
     team: '',
-    position: '',
-    league: ''
+    position: ''
   });
   const teamOptions = teams.map((team)=>{
     return <option key= {team.id} value={team.id}>{team.name}</option>
   })
+
+  const positionOptions = players.map((player) => {
+    return <option key={player.id} value={player.position}>
+        {player.position}
+      </option>
+})
+  
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -61,21 +67,13 @@ function SubmitForm({teams}) {
       </label><br />
       <label>
         Position:
-        <input
-          type="text"
+        <select
           name="position"
           value={formData.position}
           onChange={handleInputChange}
-        />
-      </label><br />
-      <label>
-        League:
-        <input
-          type="text"
-          name="league"
-          value={formData.league}
-          onChange={handleInputChange}
-        />
+        >
+            {positionOptions}
+        </select>
       </label><br />
       <button type="submit">Submit</button>
     </form>
