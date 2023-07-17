@@ -17,6 +17,9 @@ const NavBar = () => {
       <li className='nav-bar-link'>
         <Link to="/calendar">Calendar</Link>
       </li>
+      <li className='nav-bar-link'>
+        <Link to="/submit-form">Create Player</Link>
+      </li>
     </ul>
   );
 };

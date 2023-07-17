@@ -15,6 +15,8 @@ import LeaguesPage from './pages/LeaguesPage';
 import TeamPage from './pages/TeamPage'
 import Match from './components/match/Match';
 import DisplayDecisions from './components/match/DiaplayDecisions';
+import SubmitForm from './components/SubmitForm';
+
 function App() {
 
   const [teams, setTeams] = useState([]);
@@ -57,7 +59,8 @@ function App() {
         <Route path="/player" element={<PlayerSeasonStats />} />
         <Route path='/decision' element = {<DisplayDecisions/>}/>
         <Route path="/match" element = {<Match/>}/>
-        
+        <Route path="/submit-form" element ={<SubmitForm teams={teams}/>}/>
+        <Route path="/teams" element= {<TeamPage/>}/>
       </Routes>
     </Router>
   );
