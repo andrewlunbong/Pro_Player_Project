@@ -17,6 +17,11 @@ CREATE TABLE teams (
     mid INT,
     ovr INT,
     badge VARCHAR(255),
+    goals INT, 
+    wins INT, 
+    loses INT, 
+    draws INT, 
+    points INT,
     league_id INT NOT NULL REFERENCES leagues(id) ON DELETE CASCADE
 );
 
@@ -67,6 +72,9 @@ CREATE TABLE players (
     fk_accuracy INT,
     penalties INT,
     volleys INT,
+    goals INT,
+    assistance INT, 
+    appearances INT,
     team_id INT NOT NULL REFERENCES teams(id) ON DELETE CASCADE
 );
 

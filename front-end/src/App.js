@@ -6,7 +6,6 @@ import CalendarPage from './components/CalendarPage';
 
 import SquadPage from './components/squad/SquadPage';
 import Timer from './components/Timer' ;
-import PlayerDetails from './components/PlayerDetails';
 import './App.css';
 
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
@@ -20,6 +19,7 @@ import Decision from './logic/Decision';
 
 
 import DisplayDecisions from './components/match/DiaplayDecisions';
+import PlayerPage from './pages/PlayerPage';
 function App() {
 
   const [teams, setTeams] = useState([]);
@@ -56,13 +56,10 @@ function App() {
         {/* Angel below */}
         <Route path='/leagues' element= {<LeaguesPage/>}/>
         <Route path='/teams/:teamId' element= {<TeamPage/>}/>
-        {/* <Route path='/players/:playerId' element= 
-        {<PlayerDetails
-        />}/> */}
+        <Route path='/players/:playerId' element= {<PlayerPage />}/>
         <Route path="/player" element={<PlayerSeasonStats />} />
         <Route path='/decision' element = {<DisplayDecisions/>}/>
         <Route path="/match" element = {<Match/>}/>
-        
       </Routes>
     </Router>
   );

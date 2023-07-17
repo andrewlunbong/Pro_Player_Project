@@ -13,3 +13,9 @@
     background-color: aquamarine;
     /* @apply rounded-box  */
 }
+
+@layer components {
+    .gk {
+        
+    }
+  }
