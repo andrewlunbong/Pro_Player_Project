@@ -3,17 +3,22 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './containers/HomePage';
 import CalendarPage from './components/CalendarPage';
+
 import SquadPage from './components/squad/SquadPage';
-import Decision from './logic/Decision';
 import Timer from './components/Timer' ;
 import PlayerDetails from './components/PlayerDetails';
 import './App.css';
+
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
 import ProplayerService from './services/ProplayerService';
 import 'daisyui/dist/full.css';
 import LeaguesPage from './pages/LeaguesPage';
 import TeamPage from './pages/TeamPage'
 import Match from './components/match/Match';
+
+import Decision from './logic/Decision';
+
+
 import DisplayDecisions from './components/match/DiaplayDecisions';
 function App() {
 
