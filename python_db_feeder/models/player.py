@@ -46,5 +46,8 @@ class Player:
         self.AT_fk_accuracy = AT_fk_accuracy
         self.AT_penalties = AT_penalties
         self.AT_volleys = AT_volleys
+        self.goals = 0
+        self.assistance = 0
+        self.appearances = 0
         self.team = team
         self.id = id

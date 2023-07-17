@@ -19,6 +19,9 @@ public class League implements Serializable {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "logo")
+    private String logo;
+
     @OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
     //You can use JsonBackReference here as an alternative
     @JsonIgnoreProperties({"league"})
@@ -28,8 +31,9 @@ public class League implements Serializable {
 
     }
 
-    public League(String name) {
+    public League(String name, String logo) {
         this.name = name;
+        this.logo = logo;
         this.teams = new ArrayList<>();
     }
 
@@ -47,6 +51,14 @@ public class League implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 
     public void setName(String name) {
