@@ -4,13 +4,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './containers/HomePage';
 import CalendarPage from './components/CalendarPage';
 import SquadPage from './components/SquadPage';
-import Decision from './logic/Decision';
-import  Timer from './components/Timer' ;
+import  Timer from './components/match/Timer' ;
 // import './App.css';
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
 import Match from './components/match/Match';
 import Decision from './logic/Decision';
-import Timer from './components/Timer';
+
 import DisplayDecisions from './components/match/DiaplayDecisions';
 function App() {
 
