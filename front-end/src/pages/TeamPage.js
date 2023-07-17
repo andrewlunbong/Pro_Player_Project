@@ -18,13 +18,6 @@ const TeamPage = () => {
         !teamSelected && getTeam(teamId)
     }, [teamSelected]);
 
-    // const leaguesList = leagues.map((league) => {
-    //     return <LeagueCard
-    //         key={league.id}
-    //         league={league}
-    //         setSelectedLeague={setSelectedLeague}
-    //     />
-    // })
 
     const playersByTeam = teamSelected?.players?.map((player) => {
         return <PlayerCard
@@ -37,11 +30,39 @@ const TeamPage = () => {
     console.log('teamSelected :>> ', teamSelected);
     return (
         <>
-            <div className="m-auto mt-6 mb-6 w-10/12">
-                <h1>Team Page: </h1>
-                <div className="flex flex-wrap justify-center">{playersByTeam}</div>
-            </div>
-
+            {teamSelected && (
+                <div className="m-auto mt-6 mb-6 w-10/12">
+                    <h1>Team Page: </h1>
+                    <div className="flex flex-wrap flex-row">
+                        <div className="basis-1/4 bg-cover">
+                            <img src={teamSelected.badge} alt={teamSelected.name}></img>
+                        </div>
+                        <div className="basis-3/4">
+                            <h1 className="text-5xl font-bold mb-3">{teamSelected.name}</h1>
+                            <h1 className='"text-5xl font-bold mb-5"'>{teamSelected.league.name}</h1>
+                            <div className="stats shadow justify-items-center text-center">
+                                <div className="stat bg-indigo-600">
+                                    <div className=" text-white w-20 ">Overall</div>
+                                    <div className="stat-value text-white">{teamSelected.ovr}</div>
+                                </div>
+                                <div className="stat bg-yellow-600">
+                                    <div className="text-white w-20">Defense</div>
+                                    <div className="stat-value text-white">{teamSelected.defe}</div>
+                                </div>
+                                <div className="stat bg-green-600">
+                                    <div className="text-white w-20">Mid Field</div>
+                                    <div className="stat-value text-white">{teamSelected.mid}</div>
+                                </div>
+                                <div className="stat bg-blue-600">
+                                    <div className="text-white w-20">Attack</div>
+                                    <div className="stat-value text-white">{teamSelected.att}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex flex-wrap justify-center">{playersByTeam}</div>
+                </div>
+            )}
         </>
     )
 }
