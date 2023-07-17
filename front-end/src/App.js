@@ -3,38 +3,37 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './containers/HomePage';
 import CalendarPage from './components/CalendarPage';
-import SquadPage from './components/SquadPage';
-import Decision from './logic/Decision';
+
+import SquadPage from './components/squad/SquadPage';
 import Timer from './components/Timer' ;
 import './App.css';
+
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
 import ProplayerService from './services/ProplayerService';
 import 'daisyui/dist/full.css';
 import LeaguesPage from './pages/LeaguesPage';
 import TeamPage from './pages/TeamPage'
 import Match from './components/match/Match';
+
+import Decision from './logic/Decision';
+
+
 import DisplayDecisions from './components/match/DiaplayDecisions';
 import PlayerPage from './pages/PlayerPage';
 function App() {
 
-  // FOR LEAGUES
+  const [teams, setTeams] = useState([]);
 
-
-
-
-    // const [players, setPlayers] = useState([]);
-  // useEffect(() => {
-    
-
-  //   fetch('http://localhost:8080/players')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setPlayers(data);
+  useEffect(() => {
+    fetch('http://localhost:8080/teams')
+      .then(response => response.json())
+      .then(data => {
+        setTeams(data);
         
-  //     })
-  // }, []);
+      })
+  }, []);
 
-  
+  console.log(teams)
   return (
 
   //   <div>
@@ -51,9 +50,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/calendar" element={<CalendarPage />} />
-        <Route path="/squad" element={<SquadPage />} />
+        <Route path="/squad" element={<SquadPage squad={teams[1]} />} />
         <Route path="/playerSeasonStats" element={<PlayerSeasonStats />} />
-        <Route path='/decision' element = {<Decision/>}/>
         <Route path='/timer' element= {<Timer/>}/>
         {/* Angel below */}
         <Route path='/leagues' element= {<LeaguesPage/>}/>
