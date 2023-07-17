@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu } from 'antd';
-import { useState } from 'react';
 
 const NavBar = () => {
   return (
+
     <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
       <li className='nav-bar-link'>
         <Link to="/">Home</Link>
@@ -21,5 +20,4 @@ const NavBar = () => {
     </ul>
   );
 };
-
 export default NavBar;
