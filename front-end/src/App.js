@@ -5,20 +5,21 @@ import HomePage from './containers/HomePage';
 import CalendarPage from './components/CalendarPage';
 import SquadPage from './components/squad/SquadPage';
 import Decision from './logic/Decision';
-import  Timer from './components/Timer' ;
-import 'daisyui/dist/full.css';
-
-// import './App.css';
+import Timer from './components/Timer' ;
+import PlayerDetails from './components/PlayerDetails';
+import './App.css';
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
-import { getProplayerPlayers, updateProplayer, postProplayer } from './services/ProplayerService';
-
+import ProplayerService from './services/ProplayerService';
+import 'daisyui/dist/full.css';
+import LeaguesPage from './pages/LeaguesPage';
+import TeamPage from './pages/TeamPage'
+import Match from './components/match/Match';
+import DisplayDecisions from './components/match/DiaplayDecisions';
 function App() {
 
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    
-
     fetch('http://localhost:8080/teams')
       .then(response => response.json())
       .then(data => {
@@ -40,16 +41,22 @@ function App() {
   //   </div>
   // );
 
-   
-
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/squad" element={<SquadPage squad={teams[1]} />} />
+        <Route path="/playerSeasonStats" element={<PlayerSeasonStats />} />
+        <Route path='/timer' element= {<Timer/>}/>
+        {/* Angel below */}
+        <Route path='/leagues' element= {<LeaguesPage/>}/>
+        <Route path='/teams/:teamId' element= {<TeamPage/>}/>
+        {/* <Route path='/players/:playerId' element= 
+        {<PlayerDetails
+        />}/> */}
         <Route path="/player" element={<PlayerSeasonStats />} />
-        {/* <Route path='/decision' element = {<Decision/>}/>
-        <Route path='/timer' element= {<Timer/>}/> */}
+        <Route path='/decision' element = {<DisplayDecisions/>}/>
+        <Route path="/match" element = {<Match/>}/>
         
       </Routes>
     </Router>

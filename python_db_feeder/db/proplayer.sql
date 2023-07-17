@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS leagues;
 
 CREATE TABLE leagues (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    logo VARCHAR(255)
 );
 
 CREATE TABLE teams (
