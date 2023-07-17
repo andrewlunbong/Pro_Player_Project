@@ -36,7 +36,7 @@ const LeaguesPage = () => {
             team={team}
         />
     })
-    console.log('selectedLeague :>> ', selectedLeague);
+    // console.log('selectedLeague :>> ', selectedLeague);
 
     return (
         <>
