@@ -2,7 +2,7 @@ import PlayerDisplay from "./PlayerDisplay"
 
 const TeamDisplay = ({team})=>{
 
-const allPlayers = team.map((player, index)=>{
+const allPlayers = team.players.map((player, index)=>{
     return <PlayerDisplay key={index} player = {player}  index = {index}/>
 })
 

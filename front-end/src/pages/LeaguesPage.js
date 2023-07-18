@@ -36,7 +36,7 @@ const LeaguesPage = () => {
             team={team}
         />
     })
-    console.log('selectedLeague :>> ', selectedLeague);
+    // console.log('selectedLeague :>> ', selectedLeague);
 
     return (
         <>
@@ -45,8 +45,6 @@ const LeaguesPage = () => {
                 <div className="flex flex-wrap gap-7 justify-center">{leaguesList}</div>
                 <div className="flex flex-wrap gap-3 justify-center mt-6">{selectedLeague && teamsByLeagueList}</div>
             </div>
-
-
         </>
     )
 };
