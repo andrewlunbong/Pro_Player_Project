@@ -20,7 +20,7 @@ public class Match implements Serializable {
     private Boolean isFinished;
 
     @ManyToOne
-    @JsonIgnoreProperties({"matches"})
+    @JsonIgnoreProperties({"matches", "teamHome", "teamAway", "league"})
     @JoinColumn(name="team_home_id", nullable=false)
     private Team teamHome;
 
@@ -28,7 +28,7 @@ public class Match implements Serializable {
     private int teamHomeGoals;
 
     @ManyToOne
-    @JsonIgnoreProperties({"matches"})
+    @JsonIgnoreProperties({"matches", "teamHome", "teamAway", "league"})
     @JoinColumn(name="team_away_id", nullable=false)
     private Team teamAway;
 
@@ -36,14 +36,16 @@ public class Match implements Serializable {
     private int teamAwayGoals;
 
     @ManyToOne
-    @JsonIgnoreProperties({"matches"})
+    @JsonIgnoreProperties({"matches", "league"})
     @JoinColumn(name= "league_id", nullable=false )
     private League league;
 
-    @JsonIgnoreProperties({"matches"})
+
     @ManyToOne
+    @JsonIgnoreProperties({"matches"})
     @JoinColumn(name = "season_id", nullable = false)
     private Season season;
+
 
     public Match(){
     }
