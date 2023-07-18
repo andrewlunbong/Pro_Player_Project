@@ -22,7 +22,7 @@ const PlayerPage = () => {
         RB: "bg-yellow-600",
         CB: "bg-yellow-600",
         LB: "bg-yellow-600",
-        RWB:"bg-yellow-600",
+        RWB: "bg-yellow-600",
         RCB: "bg-yellow-600",
         LCB: "bg-yellow-600",
         CDM: "bg-green-600",
@@ -45,7 +45,7 @@ const PlayerPage = () => {
     };
 
     const colourToOverall = (player) => {
-        if (player.overall >= 50 && player.overall < 60) {
+        if (player.overall >= 0 && player.overall < 60) {
             return "bg-red-500"
         } else if (player.overall >= 60 && player.overall < 70) {
             return "bg-orange-500"
@@ -58,11 +58,24 @@ const PlayerPage = () => {
         }
     };
 
+    const colourToSkills = (skillNumber) => {
+        if (skillNumber >= 0 && skillNumber < 60) {
+            return "bg-red-500"
+        } else if (skillNumber >= 60 && skillNumber < 70) {
+            return "bg-orange-500"
+        } else if (skillNumber >= 70 && skillNumber < 80) {
+            return "bg-yellow-400"
+        } else if (skillNumber >= 80 && skillNumber < 90) {
+            return "bg-lime-400"
+        } else {
+            return "bg-green-700"
+        }
+    };
+
     return (
         <>
             {player && (
                 <>
-                    <div>PlayerPage</div>
                     <div className="m-auto mt-6 mb-6 w-10/12">
                         <div className="flex flex-row">
                             <div className="basis-8/12">
@@ -159,47 +172,230 @@ const PlayerPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-row">
+                        <div className="flex flex-row gap-2">
                             <div className="basis-1/4">
                                 <div className="card bg-base-100 shadow-xl">
                                     <div className="card-body items-center text-center">
                                         <h2 className="card-title">Goalkeeper</h2>
                                         <div className="grid grid-cols-2 gap-x-16 gap-y-5 place-items-start">
-                                            <div>
-                                                <p>Heigth</p>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Positioning</p>
                                             </div>
                                             <div>
-                                                <p>{player.height} cm.</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.positioning)}>{player.positioning}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Diving</p>
                                             </div>
                                             <div>
-                                                <p>Weight</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.diving)}>{player.diving}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Handling</p>
                                             </div>
                                             <div>
-                                                <p>{player.weight} kg.</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.handling)}>{player.handling}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Kicking</p>
                                             </div>
                                             <div>
-                                                <p>Preferred Foot</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.kicking)}>{player.kicking}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Reflexes</p>
                                             </div>
                                             <div>
-                                                <p>{player.preferred_foot}</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.reflexes)}>{player.reflexes}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Reactions</p>
                                             </div>
                                             <div>
-                                                <p>Birth Date</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.reactions)}>{player.reactions}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Composure</p>
                                             </div>
                                             <div>
-                                                <p>{player.birth_date}</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.composure)}>{player.composure}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p></p>
                                             </div>
                                             <div>
-                                                <p>Age</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto "}>none</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="basis-1/4">
+                                <div className="card bg-base-100 shadow-xl">
+                                    <div className="card-body items-center text-center">
+                                        <h2 className="card-title">Defense</h2>
+                                        <div className="grid grid-cols-2 gap-x-16 gap-y-5 place-items-start">
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">Slide Tackle</p>
                                             </div>
                                             <div>
-                                                <p>{player.age}</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.slide_tackle)}>{player.slide_tackle}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">Stand Tackle</p>
                                             </div>
                                             <div>
-                                                <p>Role</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.stand_tackle)}>{player.stand_tackle}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Aggression</p>
                                             </div>
                                             <div>
-                                                <p>{firstChoiceOrSub[player.substitute]}</p>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.aggression)}>{player.aggression}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Interceptions</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.interceptions)}>{player.interceptions}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Strength</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.strength)}>{player.strength}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Balance</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.balance)}>{player.balance}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Jumping</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.jumping)}>{player.jumping}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Heading</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.heading)}>{player.heading}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="basis-1/4">
+                                <div className="card bg-base-100 shadow-xl">
+                                    <div className="card-body items-center text-center">
+                                        <h2 className="card-title">Mid Field</h2>
+                                        <div className="grid grid-cols-2 gap-x-16 gap-y-5 place-items-start">
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">Ball Control</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.ball_control)}>{player.ball_control}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Vision</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.vision)}>{player.vision}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Crossing</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.crossing)}>{player.crossing}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">Short Pass</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.short_pass)}>{player.short_pass}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">Long Pass</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.long_pass)}>{player.long_pass}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Stamina</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.stamina)}>{player.stamina}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Agility</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.agility)}>{player.agility}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">Long Shot</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.long_shot)}>{player.long_shot}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="basis-1/4">
+                                <div className="card bg-base-100 shadow-xl">
+                                    <div className="card-body items-center text-center">
+                                        <h2 className="card-title">Attack</h2>
+                                        <div className="grid grid-cols-2 gap-x-16 gap-y-5 place-items-start">
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">Dribbling</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.dribbling)}>{player.dribbling}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">At. Positioning</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.at_positioning)}>{player.at_positioning}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">Sprint Speed</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.sprint_speed)}>{player.sprint_speed}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">Shot Power</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.shot_power)}>{player.shot_power}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Finishing</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.finishing)}>{player.finishing}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p className="whitespace-nowrap">Fk. Accuracy</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.fk_accuracy)}>{player.fk_accuracy}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Penalties</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.penalties)}>{player.penalties}</div>
+                                            </div>
+                                            <div className="mt-auto mb-auto">
+                                                <p>Volleys</p>
+                                            </div>
+                                            <div>
+                                                <div className={"border-solid p-2 rounded-lg w-12 text-white m-auto " + colourToSkills(player.volleys)}>{player.volleys}</div>
                                             </div>
                                         </div>
                                     </div>
