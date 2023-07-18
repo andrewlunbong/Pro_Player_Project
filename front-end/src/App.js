@@ -13,17 +13,15 @@ import LeagueTableCard from './components/LeagueTableCard';
 
 
 import SquadPage from './components/squad/SquadPage';
-import Timer from './components/Timer' ;
+import Timer from './components/match/Timer' ;
 import './App.css';
 
-import PlayerSeasonStats from './components/PlayerSeasonStats.js';
+
 import ProplayerService from './services/ProplayerService';
 import 'daisyui/dist/full.css';
 import LeaguesPage from './pages/LeaguesPage';
 import TeamPage from './pages/TeamPage'
 import Match from './components/match/Match';
-
-import Decision from './logic/Decision';
 
 
 import DisplayDecisions from './components/match/DiaplayDecisions';

@@ -32,7 +32,6 @@ const TeamPage = () => {
         <>
             {teamSelected && (
                 <div className="m-auto mt-6 mb-6 w-10/12">
-                    <h1>Team Page: </h1>
                     <div className="flex flex-wrap flex-row">
                         <div className="basis-1/4 bg-cover">
                             <img src={teamSelected.badge} alt={teamSelected.name}></img>
