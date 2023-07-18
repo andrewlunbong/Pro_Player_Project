@@ -4,9 +4,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './containers/HomePage';
 import CalendarPage from './components/CalendarPage';
 
+import Decision from './logic/Decision';
+import PlayerSeasonStats from './components/PlayerSeasonStats.js';
+import { getProplayerPlayers, updateProplayer, postProplayer } from './services/ProplayerService';
+import 'daisyui/dist/full.css';
+import LeagueTable from './components/LeagueTable';
+import LeagueTableCard from './components/LeagueTableCard';
+
+
 import SquadPage from './components/squad/SquadPage';
 import Timer from './components/Timer' ;
-import PlayerDetails from './components/PlayerDetails';
 import './App.css';
 
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
@@ -20,6 +27,11 @@ import Decision from './logic/Decision';
 
 
 import DisplayDecisions from './components/match/DiaplayDecisions';
+
+import SubmitForm from './components/SubmitForm';
+
+
+import PlayerPage from './pages/PlayerPage';
 function App() {
 
   const [teams, setTeams] = useState([]);
@@ -32,6 +44,16 @@ function App() {
         
       })
   }, []);
+
+  const [players, setPlayers] = useState([]);
+
+useEffect(() => {
+  fetch('http://localhost:8080/players')
+    .then(response => response.json())
+    .then(data => {
+      setPlayers(data);
+    });
+}, []);
 
   console.log(teams)
   return (
@@ -50,19 +72,19 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/calendar" element={<CalendarPage />} />
+
         <Route path="/squad" element={<SquadPage squad={teams[1]} />} />
         <Route path="/playerSeasonStats" element={<PlayerSeasonStats />} />
         <Route path='/timer' element= {<Timer/>}/>
         {/* Angel below */}
         <Route path='/leagues' element= {<LeaguesPage/>}/>
         <Route path='/teams/:teamId' element= {<TeamPage/>}/>
-        {/* <Route path='/players/:playerId' element= 
-        {<PlayerDetails
-        />}/> */}
+        <Route path='/players/:playerId' element= {<PlayerPage />}/>
         <Route path="/player" element={<PlayerSeasonStats />} />
         <Route path='/decision' element = {<DisplayDecisions/>}/>
         <Route path="/match" element = {<Match/>}/>
-        
+        <Route path="/submit-form" element ={<SubmitForm teams={teams} players={players} />}/>
+        <Route path="/teams" element= {<TeamPage/>}/>
       </Routes>
     </Router>
   );
