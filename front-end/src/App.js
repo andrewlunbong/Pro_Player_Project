@@ -23,7 +23,6 @@ import LeaguesPage from './pages/LeaguesPage';
 import TeamPage from './pages/TeamPage'
 import Match from './components/match/Match';
 
-
 import DisplayDecisions from './components/match/DiaplayDecisions';
 
 import SubmitForm from './components/SubmitForm';

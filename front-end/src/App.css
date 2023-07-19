@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 
-<<<<<<< HEAD
-=======
 .nav-bar-link{
     width: 350px;
     /* align-content: center; */
@@ -15,10 +13,3 @@
     background-color: aquamarine;
     /* @apply rounded-box  */
 }
-
-@layer components {
-    .gk {
-        
-    }
-  }
->>>>>>> main
