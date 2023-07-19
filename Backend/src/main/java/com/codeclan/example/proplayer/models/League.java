@@ -23,9 +23,15 @@ public class League implements Serializable {
     private String logo;
 
     @OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
-    //You can use JsonBackReference here as an alternative
+
     @JsonIgnoreProperties({"league"})
+
     private List<Team> teams;
+
+    @OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"matches", "league"})
+    //You can use JsonBackReference here as an alternative
+    private List<Match> matches;
 
     public League(){
 
@@ -35,6 +41,7 @@ public class League implements Serializable {
         this.name = name;
         this.logo = logo;
         this.teams = new ArrayList<>();
+        this.matches = new ArrayList<>();
     }
 
     public Long getId() {
@@ -67,5 +74,13 @@ public class League implements Serializable {
 
     public void setTeams(List<Team> teams) {
         this.teams = teams;
+    }
+
+    public List<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
     }
 }

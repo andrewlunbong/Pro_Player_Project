@@ -1,7 +1,13 @@
 const PlayerDisplay = ({player, index})=>{
 
     return(
-        <li>{player.position}   {player.name}</li>
+        
+     <tr>
+        <th>1</th>
+        <td>{player.name}</td>
+        <td>{player.position}</td>
+        <td>Blue</td>
+      </tr>
     )
 
 

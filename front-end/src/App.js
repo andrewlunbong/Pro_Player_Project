@@ -1,46 +1,58 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './containers/HomePage';
 import CalendarPage from './components/CalendarPage';
-// import { useHistory } from 'react-router-dom';
+import SquadPage from './components/squad/SquadPage';
 
-// import Decision from './logic/Decision';
+import Timer from './components/match/Timer' ;
+import PlayerDetails from './components/PlayerDetails';
+import './App.css';
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
-import { getProplayerPlayers, updateProplayer, postProplayer } from './services/ProplayerService';
-import 'daisyui/dist/full.css';
-import LeagueTable from './components/leaguetable/LeagueTable';
+import LeagueTable from './components/LeagueTable';
 import LeagueTableCard from './components/LeagueTableCard';
 
 
 import SquadPage from './components/squad/SquadPage';
-// import Timer from './components/Timer' ;
+import Timer from './components/match/Timer' ;
 import './App.css';
+
+
 import ProplayerService from './services/ProplayerService';
 import LeaguesPage from './pages/LeaguesPage';
 import TeamPage from './pages/TeamPage'
 import Match from './components/match/Match';
-
 import Decision from './logic/Decision';
-
-
+import DisplayDecisions from './components/match/DiaplayDecisions';
+import GameGenerator from './logic/GmeGenerator';
 import DisplayDecisions from './components/match/DiaplayDecisions';
 
 import SubmitForm from './components/SubmitForm';
 
 
 import PlayerPage from './pages/PlayerPage';
+import EmailPage from './components/EmailPage';
+import LeagueCard from './components/LeagueCard';
+import LeagueTableCard from './components/LeagueTableCard';
+import LeagueTable from './components/LeagueTable';
+import NavBar from './components/NavBar';
+import PlayerDevelopment from './components/PlayerDevelopment';
 function App() {
 
   const [teams, setTeams] = useState([]);
+  let season = useRef()
+  let allMatchhesAreCreated = useRef(false)
+  const [matches, setMatches] = useState()
 
   useEffect(() => {
+    
     fetch('http://localhost:8080/teams')
       .then(response => response.json())
       .then(data => {
         setTeams(data);
         
       })
+      
   }, []);
 
   const [players, setPlayers] = useState([]);
@@ -62,6 +74,41 @@ useEffect(() => {
     });
 }, []);
   console.log(teams)
+
+  const createSeason=()=>{
+    const startingSeason = {year: 2022}
+    if(!season.current){
+      ProplayerService.postNewSeason(startingSeason)
+      .then((postedSeason) => season.current = postedSeason)
+    }
+ 
+
+  }
+
+  const generateAllGames= ()=>{
+    if(season && teams.length > 40  && !allMatchhesAreCreated.current){
+      let [championshipMatches, premierLeagueMatches] = GameGenerator(teams, season)
+      console.log("championshipMatches[1]", championshipMatches[1])
+      ProplayerService.postNewMatch(championshipMatches[1])
+      // for(let match of premierLeagueMatches){
+      //   ProplayerService.postNewMatch(match)
+      
+      // }
+      // for (let match of championshipMatches){
+      //   ProplayerService.postNewMatch(match)
+      // }
+       
+      // ProplayerService.getMatches()
+      //   .then((allMatches) => setMatches(allMatches))
+      allMatchhesAreCreated.current = true
+    }
+
+  }
+  createSeason()
+  generateAllGames()
+ 
+  console.log(season)
+
   return (
 
   //   <div>
@@ -75,17 +122,22 @@ useEffect(() => {
   // );
 
     <Router>
+    <NavBar />
       <Routes>
       <Route path="/" element={<SubmitForm teams={teams}  />} />
         <Route path="/home" element={<HomePage  />} />
         <Route path="/calendar" element={<CalendarPage />} />
-
         <Route path="/squad" element={<SquadPage squad={teams[1]} />} />
+        <Route path="/player" element={<PlayerSeasonStats/>} />
+        <Route path="/email" element={<EmailPage/>} />
+        <Route path="/player-development" element={<PlayerDevelopment/>} />
+        <Route path="/league-table" element={<LeagueTable/>} /> 
+        <Route path='/decision' element = {<Decision/>}/>
+        {/* <Route path='/timer' element= {<Timer/>}/>  */}
         <Route path="/playerSeasonStats" element={<PlayerSeasonStats />} />
-        {/* <Route path='/timer' element= {<Timer/>}/> */}
+        
         {/* Angel below */}
-        <Route path='/leagues' element= {<LeaguesPage/>}/>
-        <Route path="/league-table" element= {<LeagueTable league = {leagues}/>}/>
+        <Route path='/leagues' element= {<LeaguesPage/>}/> 
         <Route path='/teams/:teamId' element= {<TeamPage/>}/>
         <Route path='/players/:playerId' element= {<PlayerPage />}/>
         <Route path="/player" element={<PlayerSeasonStats />} />

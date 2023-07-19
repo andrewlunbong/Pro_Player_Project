@@ -61,7 +61,7 @@ dTree = {
             return this.dTree.children
         }else if( node === "s3"){
             return this.dTree.children[1].children
-        }else if(node === "s4"){
+        }else if(node === "s5"){
             return this.dTree.children[1].children[1].children
         }
         return[]
