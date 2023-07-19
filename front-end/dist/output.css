@@ -1105,6 +1105,17 @@ html {
   align-items: center;
 }
 
+.progress {
+  position: relative;
+  width: 100%;
+  -webkit-appearance: none;
+          appearance: none;
+  overflow: hidden;
+  height: 0.5rem;
+  background-color: hsl(var(--bc) / 0.2);
+  border-radius: var(--rounded-box, 1rem);
+}
+
 .select {
   display: inline-flex;
   cursor: pointer;
@@ -1579,6 +1590,51 @@ html {
   }
 }
 
+.progress::-moz-progress-bar {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+}
+
+.progress:indeterminate {
+  --progress-color: hsl(var(--bc));
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--progress-color) -1%,
+    var(--progress-color) 10%,
+    transparent 10%,
+    transparent 90%
+  );
+  background-size: 200%;
+  background-position-x: 15%;
+  -webkit-animation: progress-loading 5s ease-in-out infinite;
+          animation: progress-loading 5s ease-in-out infinite;
+}
+
+.progress::-webkit-progress-bar {
+  background-color: transparent;
+  border-radius: var(--rounded-box, 1rem);
+}
+
+.progress::-webkit-progress-value {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+  border-radius: var(--rounded-box, 1rem);
+}
+
+.progress:indeterminate::-moz-progress-bar {
+  background-color: transparent;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--progress-color) -1%,
+    var(--progress-color) 10%,
+    transparent 10%,
+    transparent 90%
+  );
+  background-size: 200%;
+  background-position-x: 15%;
+  animation: progress-loading 5s ease-in-out infinite;
+}
+
 @-webkit-keyframes progress-loading {
   50% {
     background-position-x: -115%;
@@ -1915,6 +1971,10 @@ html {
   grid-row: span 4 / span 4;
 }
 
+.row-span-6 {
+  grid-row: span 6 / span 6;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -2039,6 +2099,10 @@ html {
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
+.grid-rows-6 {
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -2115,6 +2179,14 @@ html {
   border-width: 2px;
 }
 
+.border {
+  border-width: 1px;
+}
+
+.border-s {
+  border-inline-start-width: 1px;
+}
+
 .border-solid {
   border-style: solid;
 }
@@ -2142,6 +2214,11 @@ html {
 .border-yellow-600 {
   --tw-border-opacity: 1;
   border-color: rgb(202 138 4 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .bg-base-100 {
@@ -2231,6 +2308,10 @@ html {
 
 .pt-7 {
   padding-top: 1.75rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {

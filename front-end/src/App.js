@@ -76,7 +76,8 @@ useEffect(() => {
 
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage  />} />
+      <Route path="/" element={<SubmitForm teams={teams}  />} />
+        <Route path="/home" element={<HomePage  />} />
         <Route path="/calendar" element={<CalendarPage />} />
 
         <Route path="/squad" element={<SquadPage squad={teams[1]} />} />
@@ -90,7 +91,7 @@ useEffect(() => {
         <Route path="/player" element={<PlayerSeasonStats />} />
         <Route path='/decision' element = {<DisplayDecisions/>}/>
         <Route path="/match" element = {<Match/>}/>
-        <Route path="/submit-form" element ={<SubmitForm teams={teams} players={players} />}/>
+        {/* <Route path="/submit-form" element ={<SubmitForm teams={teams} players={players} />}/> */}
         <Route path="/teams" element= {<TeamPage/>}/>
       </Routes>
     </Router>

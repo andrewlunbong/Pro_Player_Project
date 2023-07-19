@@ -13,7 +13,7 @@ const NavBar = () => {
       <Link to="/player" className="btn btn-ghost normal-case text-xl w-80">Player</Link>
       <Link to="/squad"className="btn btn-ghost normal-case text-xl w-80">Squad</Link>
       <Link to="/calendar" className="btn btn-ghost normal-case text-xl w-80">Calendar</Link>
-      <Link to="/submit-form" className="btn btn-ghost normal-case text-xl w-80">Create Player</Link>
+      
     </div>
     // <div className="navbar bg-base-100">
     //   <div className="flex-1">
