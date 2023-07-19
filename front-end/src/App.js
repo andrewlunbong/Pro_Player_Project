@@ -74,7 +74,7 @@ useEffect(() => {
 
   const generateAllGames= ()=>{
     if(season && teams.length > 40  && !allMatchhesAreCreated.current){
-      let [championshipMatches, premierLeagueMatches] = GameGenerator(teams, season)
+      let [championshipMatches, premierLeagueMatches] = GameGenerator(teams, season.current)
       console.log("championshipMatches[1]", championshipMatches[1])
       ProplayerService.postNewMatch(championshipMatches[1])
       // for(let match of premierLeagueMatches){

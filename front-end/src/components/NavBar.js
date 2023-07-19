@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 
 
-const NavBar = () => {
+const NavBar = ({player}) => {
   return (
    
     <div className="navbar bg-base-100">
       <Link to="/" className="btn btn-ghost normal-case text-xl w-1/6">Home</Link>
-      <Link to="/player" className="btn btn-ghost normal-case text-xl w-1/6">Player</Link>
-      <Link to="/squad"className="btn btn-ghost normal-case text-xl w-1/6">Squad</Link>
+      {/* <Link to={"/players/" + player.id} className="btn btn-ghost normal-case text-xl w-1/6">Player</Link> */}
+      {/* <Link to={"/teams/" + player.team} className="btn btn-ghost normal-case text-xl w-1/6">Squad</Link> */}
       <Link to="/calendar" className="btn btn-ghost normal-case text-xl w-1/6">Calendar</Link>
       <Link to="/leagues" className="btn btn-ghost normal-case text-xl w-1/6">League</Link>
       <p className="btn btn-ghost normal-case text-xl w-1/6">Exp</p>
