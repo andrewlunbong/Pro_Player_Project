@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LeagueTable from '../components/LeagueTable';
+import LeagueTable from '../components/leaguetable/LeagueTable';
 import NavBar from '../components/NavBar';
 import LeagueTableCard from '../components/LeagueTableCard';
 
 
-const HomePage = ({LeagueTable}) => {
+const HomePage = ({league}) => {
   return (
     <div className="home-container h-screen">
      <NavBar/>
-     <LeagueTableCard LeagueTable={LeagueTable}/>
+     <LeagueTableCard league={league}/>
     </div>
   );
 };

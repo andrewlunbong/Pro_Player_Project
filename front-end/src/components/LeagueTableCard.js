@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import LeagueTable from "./leaguetable/LeagueTable";
 
-const LeagueTableCard = ({ LeagueTable }) => {
+const LeagueTableCard = (league) => {
   return (
     <div className="grid grid-cols-3  grid-rows-2 gap-2 gap-y-7">
       
