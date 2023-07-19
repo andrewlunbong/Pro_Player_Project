@@ -3,36 +3,24 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './containers/HomePage';
 import CalendarPage from './components/CalendarPage';
-<<<<<<< HEAD
-import SquadPage from './components/SquadPage';
-import Decision from './logic/Decision';
-import  Timer from './components/Timer' ;
-import './App.css';
-import PlayerSeasonStats from './components/PlayerSeasonStats.js';
-import { getProplayerPlayers, updateProplayer, postProplayer } from './services/ProplayerService';
-import 'daisyui/dist/full.css';
-import LeagueTable from './components/LeagueTable';
-import LeagueTableCard from './components/LeagueTableCard';
-
-=======
->>>>>>> main
-
 import SquadPage from './components/squad/SquadPage';
-import Timer from './components/Timer' ;
+// import Timer from './components/Timer' ;
 import './App.css';
-
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
 import ProplayerService from './services/ProplayerService';
 import 'daisyui/dist/full.css';
 import LeaguesPage from './pages/LeaguesPage';
 import TeamPage from './pages/TeamPage'
 import Match from './components/match/Match';
-
 import Decision from './logic/Decision';
-
-
 import DisplayDecisions from './components/match/DiaplayDecisions';
 import PlayerPage from './pages/PlayerPage';
+import EmailPage from './components/EmailPage';
+import LeagueCard from './components/LeagueCard';
+import LeagueTableCard from './components/LeagueTableCard';
+import LeagueTable from './components/LeagueTable';
+import NavBar from './components/NavBar';
+import PlayerDevelopment from './components/PlayerDevelopment';
 function App() {
 
   const [teams, setTeams] = useState([]);
@@ -60,30 +48,26 @@ function App() {
   // );
 
     <Router>
+    <NavBar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage/>} />
         <Route path="/calendar" element={<CalendarPage />} />
-<<<<<<< HEAD
-        <Route path="/squad" element={<SquadPage />} />
-        <Route path="/player" element={<PlayerSeasonStats/>} />
-        <Route path="/league-table" element={<LeagueTable/>} />
-        <Route path="/league-table" element={<LeagueTableCard/>} />
-        {/* <Route path='/decision' element = {<Decision/>}/>
-        <Route path='/timer' element= {<Timer/>}/> */}
-        
-        
-=======
         <Route path="/squad" element={<SquadPage squad={teams[1]} />} />
+        <Route path="/player" element={<PlayerSeasonStats/>} />
+        <Route path="/email" element={<EmailPage/>} />
+        <Route path="/player-development" element={<PlayerDevelopment/>} />
+        <Route path="/league-table" element={<LeagueTable/>} /> 
+        <Route path='/decision' element = {<Decision/>}/>
+        {/* <Route path='/timer' element= {<Timer/>}/>  */}
         <Route path="/playerSeasonStats" element={<PlayerSeasonStats />} />
-        <Route path='/timer' element= {<Timer/>}/>
+        
         {/* Angel below */}
-        <Route path='/leagues' element= {<LeaguesPage/>}/>
+        <Route path='/leagues' element= {<LeaguesPage/>}/> 
         <Route path='/teams/:teamId' element= {<TeamPage/>}/>
         <Route path='/players/:playerId' element= {<PlayerPage />}/>
         <Route path="/player" element={<PlayerSeasonStats />} />
         <Route path='/decision' element = {<DisplayDecisions/>}/>
-        <Route path="/match" element = {<Match/>}/>
->>>>>>> main
+        <Route path="/match" element = {<Match/>}/> 
       </Routes>
     </Router>
   );

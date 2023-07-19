@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 import LeagueTable from '../components/LeagueTable';
 import NavBar from '../components/NavBar';
 import LeagueTableCard from '../components/LeagueTableCard';
+import EmailPage from '../components/EmailPage';
+import PlayerDevelopment from '../components/PlayerDevelopment';
 
 
-const HomePage = ({LeagueTable}) => {
+const HomePage = () => {
   return (
     <div className="home-container h-screen">
-     <NavBar/>
-     <LeagueTableCard LeagueTable={LeagueTable}/>
+     <LeagueTableCard/>
+     {/* <EmailPage/>
+     <PlayerDevelopment/> */}
     </div>
   );
 };
