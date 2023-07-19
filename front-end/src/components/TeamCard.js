@@ -17,20 +17,20 @@ const TeamCard = ({ team }) => {
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{team.name}</h2>
-                    <div className="grid grid-rows-1 grid-flow-col gap-3">
-                        <div className="border-solid border-2 border-indigo-600 p-2 rounded-lg">
+                    <div className="grid grid-cols-4 grid-flow-col gap-3">
+                        <div className="border-solid bg-indigo-600 p-2 text-white rounded-lg">
                         <p>OVR</p>
                         <div>{team.ovr}</div>
                         </div>
-                        <div className="border-solid border-2 border-yellow-600 p-2 rounded-lg">
+                        <div className="border-solid bg-yellow-600 text-white p-2 rounded-lg">
                         <p>DEF</p>
                         <div>{team.defe}</div>
                         </div>
-                        <div className="border-solid border-2 border-green-600 p-2 rounded-lg">
+                        <div className="border-solid bg-green-600 text-white p-2 rounded-lg">
                         <p>MID</p>
                         <div>{team.mid}</div>
                         </div>
-                        <div className="border-solid border-2 border-blue-600 p-2 rounded-lg">
+                        <div className="border-solid bg-blue-600 text-white p-2 rounded-lg">
                         <p>ATT</p>
                         <div>{team.att}</div>
                         </div>

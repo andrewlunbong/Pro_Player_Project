@@ -233,7 +233,7 @@ const PlayerPage = () => {
                             <div className="basis-1/4">
                                 <div className="card bg-base-100 shadow-xl">
                                     <div className="card-body items-center text-center">
-                                        <h2 className="card-title">Defense</h2>
+                                        <h2 className="card-title">Defence</h2>
                                         <div className="grid grid-cols-2 gap-x-16 gap-y-5 place-items-start">
                                             <div className="mt-auto mb-auto">
                                                 <p className="whitespace-nowrap">Slide Tackle</p>
