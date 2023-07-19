@@ -6,8 +6,6 @@ import CalendarPage from './components/CalendarPage';
 
 import Decision from './logic/Decision';
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
-import { getProplayerPlayers, updateProplayer, postProplayer } from './services/ProplayerService';
-import 'daisyui/dist/full.css';
 import LeagueTable from './components/LeagueTable';
 import LeagueTableCard from './components/LeagueTableCard';
 
@@ -22,13 +20,18 @@ import 'daisyui/dist/full.css';
 import LeaguesPage from './pages/LeaguesPage';
 import TeamPage from './pages/TeamPage'
 import Match from './components/match/Match';
-
 import DisplayDecisions from './components/match/DiaplayDecisions';
 
 import SubmitForm from './components/SubmitForm';
 
 
 import PlayerPage from './pages/PlayerPage';
+import EmailPage from './components/EmailPage';
+import LeagueCard from './components/LeagueCard';
+import LeagueTableCard from './components/LeagueTableCard';
+import LeagueTable from './components/LeagueTable';
+import NavBar from './components/NavBar';
+import PlayerDevelopment from './components/PlayerDevelopment';
 function App() {
 
   const [teams, setTeams] = useState([]);
@@ -66,15 +69,21 @@ useEffect(() => {
   // );
 
     <Router>
+    <NavBar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage/>} />
         <Route path="/calendar" element={<CalendarPage />} />
-
         <Route path="/squad" element={<SquadPage squad={teams[1]} />} />
+        <Route path="/player" element={<PlayerSeasonStats/>} />
+        <Route path="/email" element={<EmailPage/>} />
+        <Route path="/player-development" element={<PlayerDevelopment/>} />
+        <Route path="/league-table" element={<LeagueTable/>} /> 
+        <Route path='/decision' element = {<Decision/>}/>
+        {/* <Route path='/timer' element= {<Timer/>}/>  */}
         <Route path="/playerSeasonStats" element={<PlayerSeasonStats />} />
-        <Route path='/timer' element= {<Timer/>}/>
+        
         {/* Angel below */}
-        <Route path='/leagues' element= {<LeaguesPage/>}/>
+        <Route path='/leagues' element= {<LeaguesPage/>}/> 
         <Route path='/teams/:teamId' element= {<TeamPage/>}/>
         <Route path='/players/:playerId' element= {<PlayerPage />}/>
         <Route path="/player" element={<PlayerSeasonStats />} />
