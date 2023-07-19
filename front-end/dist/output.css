@@ -2585,17 +2585,6 @@ html {
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
-.nav-bar-link{
-  width: 350px;
-  /* align-content: center; */
-}
-
-.menu{
-  width: 100%;
-  background-color: aquamarine;
-  /* @apply rounded-box  */
-}
-
 @media (min-width: 1024px) {
   .lg\:menu-horizontal {
     display: inline-flex;
@@ -2624,3 +2613,7 @@ html {
     border-radius: var(--rounded-box, 1rem);
   }
 }
+
+
+  
+

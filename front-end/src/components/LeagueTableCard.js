@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import LeagueTable from "./LeagueTable";
+import PlayerDevelopment from "./PlayerDevelopment";
 
-const LeagueTableCard = ({ LeagueTable }) => {
+const LeagueTableCard = () => {
   return (
+    <div className="m-auto mt-6 mb-6 w-10/12">
+
     <div className="grid grid-cols-3  grid-rows-2 gap-2 gap-y-7">
       
         <div className="card shadow-xl h-auto  ">
@@ -39,7 +43,9 @@ const LeagueTableCard = ({ LeagueTable }) => {
           <div className="card-body items-center text-center">
             <h2 className="card-title">League Table</h2>
             <div className="card-actions"></div>
+            <LeagueTable/>
             <Link to="/league-table" className="btn btn-primary">View Standings</Link>
+
           </div>
         </div>
 
@@ -62,9 +68,10 @@ const LeagueTableCard = ({ LeagueTable }) => {
             <h2 className="card-title">Development</h2>
             <div className="card-actions"></div>
             <Link to="/player-development" className="btn btn-primary">My Development</Link>
-          </div>
+            </div>
         </div>
       
+    </div>
     </div>
   );
 };
