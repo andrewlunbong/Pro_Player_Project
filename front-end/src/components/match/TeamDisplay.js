@@ -7,9 +7,25 @@ const allPlayers = team.players.map((player, index)=>{
 })
 
 return(
-    <ul>
+    <div className="overflow-x-auto">
+  <table className="table table-zebra">
+    {/* head */}
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Favorite Color</th>
+      </tr>
+    </thead>
+    <tbody>
         {allPlayers}
-    </ul>
+    </tbody>
+  </table>
+    {/* <ul>
+        {allPlayers}
+    </ul> */}
+</div>
 )
 
 }

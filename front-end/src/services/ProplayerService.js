@@ -83,12 +83,19 @@ const ProplayerService = {
   },
 
   postNewMatch (payload){
+
+    console.log("THIS IS HTE OBJECT WE ARE TRYING TO SAVE")
+    console.log(payload)
     return fetch ( baseURL + "matches", {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: { 'Content-Type': 'application/json' }
     })
     .then(res => res.json())
+    .catch((err) => {
+      console.log("error", err)
+      console.error(err)
+    }) 
   },
 
   updateMatch (payload){

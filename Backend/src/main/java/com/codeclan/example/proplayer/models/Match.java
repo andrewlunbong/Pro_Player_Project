@@ -36,6 +36,7 @@ public class Match implements Serializable {
     private int teamAwayGoals;
 
     @ManyToOne
+
     @JsonIgnoreProperties({"matches", "league"})
     @JoinColumn(name= "league_id", nullable=false )
     private League league;

@@ -65,9 +65,24 @@ const Timer = ({time})=>{
 
 
     return(
-        <div>
-        <h2>{time.m}:{time.s}</h2>
-        </div>
+        // <div>
+        // <h2>{time.m}:{time.s}</h2>
+        // </div>
+        <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
+
+  <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+    <span className="countdown font-mono text-2xl">
+      <span style={{"--value":time.m}}></span>
+    </span>
+    min
+  </div> 
+  {/* <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+    <span className="countdown font-mono text-2xl">
+      <span style={{"--value": time.s}}></span>
+    </span>
+    sec
+  </div> */}
+</div>
     )
 
 
