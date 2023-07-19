@@ -10,7 +10,6 @@ import PlayerDevelopment from '../components/PlayerDevelopment';
 const HomePage = ({league}) => {
   return (
     <div className="home-container h-screen">
-     <NavBar/>
      <LeagueTableCard league={league}/>
     </div>
   );

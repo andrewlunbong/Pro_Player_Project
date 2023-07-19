@@ -38,36 +38,18 @@ function App() {
   let allMatchhesAreCreated = useRef(false)
   const [matches, setMatches] = useState()
 
+  const getTeams = () => {
+    ProplayerService.getTeams()
+      .then((teamsData) =>
+        setTeams(teamsData)
+      );
+  };
+
   useEffect(() => {
-    
-    fetch('http://localhost:8080/teams')
-      .then(response => response.json())
-      .then(data => {
-        setTeams(data);
-        
-      })
-      
-  }, []);
-
-  const [players, setPlayers] = useState([]);
-
-useEffect(() => {
-  fetch('http://localhost:8080/players')
-    .then(response => response.json())
-    .then(data => {
-      setPlayers(data);
-    });
-}, []);
-const [leagues,setLeagues] = useState();
-
-useEffect(() => {
-  fetch('http://localhost:8080/leagues')
-    .then(response => response.json())
-    .then(data => {
-      setLeagues(data);
-    });
-}, []);
-  console.log(teams)
+    if (teams.length === 0) {
+      getTeams();
+    };
+  }, [teams]);
 
   const createSeason=()=>{
     const startingSeason = {year: 2022}
@@ -75,8 +57,6 @@ useEffect(() => {
       ProplayerService.postNewSeason(startingSeason)
       .then((postedSeason) => season.current = postedSeason)
     }
- 
-
   }
 
   const generateAllGames= ()=>{
@@ -137,7 +117,7 @@ useEffect(() => {
         <Route path="/player" element={<PlayerSeasonStats />} />
         <Route path='/decision' element = {<DisplayDecisions/>}/>
         <Route path="/match" element = {<Match/>}/>
-        {/* <Route path="/submit-form" element ={<SubmitForm teams={teams} players={players} />}/> */}
+        <Route path="/submit-form" element ={<SubmitForm />}/>
         <Route path="/teams" element= {<TeamPage/>}/>
       </Routes>
     </Router>
