@@ -2032,6 +2032,7 @@ html {
   padding-bottom: 0.25rem;
 }
 
+<<<<<<< HEAD
 .gk {
 }
 
@@ -2039,6 +2040,12 @@ html {
   position: fixed;
 }
 
+=======
+.fixed {
+  position: fixed;
+}
+
+>>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 .inset-0 {
   inset: 0px;
 }
@@ -2171,10 +2178,13 @@ html {
   width: 24rem;
 }
 
+<<<<<<< HEAD
 .w-32 {
   width: 8rem;
 }
 
+=======
+>>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 .w-1\/6 {
   width: 16.666667%;
 }
@@ -2210,6 +2220,7 @@ html {
 .auto-cols-max {
   grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
+<<<<<<< HEAD
 }
 
 .grid-flow-col {
@@ -2218,6 +2229,12 @@ html {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+=======
+}
+
+.grid-flow-col {
+  grid-auto-flow: column;
+>>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 }
 
 .grid-cols-3 {
@@ -2232,8 +2249,17 @@ html {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+<<<<<<< HEAD
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+=======
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+>>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 }
 
 .grid-rows-1 {
@@ -2268,10 +2294,13 @@ html {
   place-items: start;
 }
 
+<<<<<<< HEAD
 .content-center {
   align-content: center;
 }
 
+=======
+>>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 .items-start {
   align-items: flex-start;
 }
@@ -2314,6 +2343,13 @@ html {
 
 .gap-5 {
   gap: 1.25rem;
+<<<<<<< HEAD
+=======
+}
+
+.gap-y-7 {
+  row-gap: 1.75rem;
+>>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 }
 
 .gap-x-16 {
@@ -2353,6 +2389,14 @@ html {
   border-width: 2px;
 }
 
+.border {
+  border-width: 1px;
+}
+
+.border-s {
+  border-inline-start-width: 1px;
+}
+
 .border-solid {
   border-style: solid;
 }
@@ -2380,6 +2424,11 @@ html {
 .border-yellow-600 {
   --tw-border-opacity: 1;
   border-color: rgb(202 138 4 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .bg-base-100 {
