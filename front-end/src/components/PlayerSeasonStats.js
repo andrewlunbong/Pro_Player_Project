@@ -1,8 +1,10 @@
 import React from "react";
+import NavBar from "./NavBar";
 
 const PlayerSeasonStats = () => {
   
   return (
+    
 <div className="overflow-x-auto">
   <table className="table table-xs">
     <thead className="player-stats">

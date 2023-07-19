@@ -16,7 +16,7 @@ console.log(squad)
 
 return(
 
-  <div className="card w-96 bg-base-100 shadow-xl">
+  <div className="card w-12/13 bg-base-100 shadow-xl">
   <div className="card-body">
     <h2 className="card-title">{squad.name}</h2>
     <h1>overall: {squad.ovr}</h1>
