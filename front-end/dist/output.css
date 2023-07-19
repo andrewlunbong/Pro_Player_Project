@@ -1954,6 +1954,14 @@ html {
   margin-top: auto;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
+.ml-12 {
+  margin-left: 3rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -2066,6 +2074,10 @@ html {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 .grid-rows-1 {
   grid-template-rows: repeat(1, minmax(0, 1fr));
 }
@@ -2092,6 +2104,10 @@ html {
 
 .place-items-start {
   place-items: start;
+}
+
+.content-center {
+  align-content: center;
 }
 
 .items-center {
@@ -2291,6 +2307,22 @@ html {
 
 .pt-7 {
   padding-top: 1.75rem;
+}
+
+.pl-12 {
+  padding-left: 3rem;
+}
+
+.pl-36 {
+  padding-left: 9rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pl-32 {
+  padding-left: 8rem;
 }
 
 .text-center {

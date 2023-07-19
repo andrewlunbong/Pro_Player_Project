@@ -20,7 +20,7 @@ function CpMatchResultGenerator(team1, team2) {
 
         
     }
-    else if( (team1.ovr-7) >= team2.ovr){
+    else if( (team1.ovr-7) > team2.ovr){
         team1ScoringProbability = getRandomInt(1,5);
         team2ScoringProbability = getRandomInt(0,2);
         for (let i=0; i<= team1ScoringProbability; i++){
@@ -85,9 +85,9 @@ const teamD = {
     "score": 0
 }
 
-CpMatchResultGenerator(teamC, teamB)
+CpMatchResultGenerator(teamA, teamC)
 
-console.log('TeamB.score :>> ', teamB.score);
+console.log('TeamB.score :>> ', teamA.score);
 console.log('TeamC.score :>> ', teamC.score);
 
 // export default CpMatchResultGenerator
