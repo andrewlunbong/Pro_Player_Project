@@ -58,6 +58,7 @@ public class Team implements Serializable {
     private League league;
 
     @OneToMany(mappedBy = "team")
+    @JsonIgnoreProperties({"team"})
     private List<Player> players;
 
     @OneToMany

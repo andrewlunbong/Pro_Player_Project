@@ -48,7 +48,7 @@ const PlayerCard = ({ player }) => {
     return (
         <>
             <div className="card card-side bg-base-100 shadow-xl w-10/12 mt-6">
-                <Link to={"/players/" + player.id}><figure><img src={player.image} alt={player.name} className="rounded-lg pl-5 w-32" /></figure></Link>
+                <Link to={"/players/" + player.id}><figure className="rounded-lg pl-5 w-36 pt-6"><img src={player.image} alt={player.name} /></figure></Link>
                 <div className="card-body">
                     <div className="flex flex-row">
                         <Link className="card-title basis-1/2" to={"/players/" + player.id}>{player.name}</Link>
