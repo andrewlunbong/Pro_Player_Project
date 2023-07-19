@@ -16,8 +16,7 @@ const ProplayerService = {
   },
 
   postNewPlayer(payload) {
-    console.log("THIS IS THE PLAYER WE ARE TRYING TO SAVE")
-    console.log(payload)
+
     return fetch(baseURL + "players", {
       method: 'POST',
       body: JSON.stringify(payload),
@@ -86,8 +85,6 @@ const ProplayerService = {
 
   postNewMatch(payload) {
 
-    console.log("THIS IS HTE OBJECT WE ARE TRYING TO SAVE")
-    console.log(payload)
     return fetch(baseURL + "matches", {
       method: 'POST',
       body: JSON.stringify(payload),

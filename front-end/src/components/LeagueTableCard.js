@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import LeagueTable from "./LeagueTable";
 import PlayerDevelopment from "./PlayerDevelopment";
 
-const LeagueTableCard = () => {
+const LeagueTableCard = ({ourPlayer}) => {
   return (
     <div className="m-auto mt-6 mb-6 w-10/12">
 
@@ -12,7 +12,7 @@ const LeagueTableCard = () => {
         <div className="card shadow-xl h-auto  ">
           <figure className="px-10 pt-7">
             {/* <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" /> */}
-            <img src="https://fifastatic.fifaindex.com/FIFA23/teams/light/10.png" alt="Logo"  />
+            <img src={ourPlayer.team.badge} alt="Logo"  />
           </figure>
           <div className="card-body items-center text-center">
             <p>Saturday, Feb 10, 2023</p>

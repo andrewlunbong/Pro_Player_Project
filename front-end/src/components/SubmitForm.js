@@ -3,7 +3,7 @@ import ProplayerService from "../services/ProplayerService";
 import { useNavigate } from "react-router-dom";
 
 
-function SubmitForm() {
+function SubmitForm({ createSeason, generateAllGames, getOurPlayer }) {
   const navigate = useNavigate()
   const [teams, setTeams] = useState([])
   const [formData, setFormData] = useState({
@@ -103,7 +103,10 @@ function SubmitForm() {
     event.preventDefault();
     const ourPlayer = generateplayer(formData)
     ProplayerService.postNewPlayer(ourPlayer)
-    console.log(ourPlayer)
+      .then(ourPlayer => getOurPlayer(ourPlayer))
+    // console.log(ourPlayer)
+    createSeason()
+    generateAllGames()
     // Process form submission or send data to an API
     // console.log(formData);
     navigate("/home")
