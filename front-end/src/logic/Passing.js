@@ -3,10 +3,10 @@ const Passing = (player, defender)=>{
 
     let passingProbability = 0;
     let missingProbability = 0;
-    let scoring =""
+    let passing =""
     let passingProbabilityTable = []
-    defenderAVG = (defender.slideTackle + defender.standTackle)/2;
-    playerAVG =  (player.shotPower + player.finishing + player.attPosition )/ 3;
+    const defenderAVG = (defender.slideTackle + defender.standTackle)/2;
+    const playerAVG =  (player.shotPower + player.finishing + player.attPosition )/ 3;
 
     if((defenderAVG-7)<=playerAVG && (defenderAVG+7)>=playerAVG){
         passingProbability = 5;
@@ -24,10 +24,10 @@ const Passing = (player, defender)=>{
         missingProbability = getRandomInt(6,8);
         passingProbability = 10- missingProbability;
         for (let i=0; i< passingProbability; i++){
-            passingProbabilityTable.push("S")
+            passingProbabilityTable.push("P")
         }
         for (let i=0; i< missingProbability; i++){
-            passingProbabilityTable.push("M")
+            passingProbabilityTable.push("NP")
         }
 
     }
@@ -35,16 +35,16 @@ const Passing = (player, defender)=>{
         passingProbability = getRandomInt(6,8);
         missingProbability = 10- missingProbability;
         for (let i=0; i< passingProbability; i++){
-            passingProbabilityTable.push("S")
+            passingProbabilityTable.push("P")
         }
         for (let i=0; i< missingProbability; i++){
-            passingProbabilityTable.push("M")
+            passingProbabilityTable.push("NP")
         }
 
     }
 
-    scoring = passingProbabilityTable[getRandomInt(0,10)]
-    if (scoring === "S"){
+    passing = passingProbabilityTable[getRandomInt(0,10)]
+    if (passing === "P"){
         console.log("Pass")
         return true
     }else{
