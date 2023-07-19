@@ -14,7 +14,6 @@ import LeagueTableCard from './components/LeagueTableCard';
 
 
 import ProplayerService from './services/ProplayerService';
-import 'daisyui/dist/full.css';
 import LeaguesPage from './pages/LeaguesPage';
 import TeamPage from './pages/TeamPage'
 import Match from './components/match/Match';
@@ -59,7 +58,15 @@ useEffect(() => {
       setPlayers(data);
     });
 }, []);
+const [leagues,setLeagues] = useState();
 
+useEffect(() => {
+  fetch('http://localhost:8080/leagues')
+    .then(response => response.json())
+    .then(data => {
+      setLeagues(data);
+    });
+}, []);
   console.log(teams)
 
   const createSeason=()=>{
@@ -111,7 +118,8 @@ useEffect(() => {
     <Router>
     <NavBar />
       <Routes>
-        <Route path="/" element={<HomePage/>} />
+      <Route path="/" element={<SubmitForm teams={teams}  />} />
+        <Route path="/home" element={<HomePage  />} />
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/squad" element={<SquadPage squad={teams[1]} />} />
         <Route path="/player" element={<PlayerSeasonStats/>} />
@@ -129,7 +137,7 @@ useEffect(() => {
         <Route path="/player" element={<PlayerSeasonStats />} />
         <Route path='/decision' element = {<DisplayDecisions/>}/>
         <Route path="/match" element = {<Match/>}/>
-        <Route path="/submit-form" element ={<SubmitForm teams={teams} players={players} />}/>
+        {/* <Route path="/submit-form" element ={<SubmitForm teams={teams} players={players} />}/> */}
         <Route path="/teams" element= {<TeamPage/>}/>
       </Routes>
     </Router>
