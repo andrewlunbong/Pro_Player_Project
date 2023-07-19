@@ -1862,23 +1862,15 @@ html {
   padding-bottom: 0.25rem;
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-.gk {
-}
-
->>>>>>> main
 .fixed {
   position: fixed;
 }
 
-=======
+
 .fixed {
   position: fixed;
 }
 
->>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 .inset-0 {
   inset: 0px;
 }
@@ -2003,15 +1995,10 @@ html {
   width: 24rem;
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 .w-32 {
   width: 8rem;
 }
 
-=======
->>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 .w-1\/6 {
   width: 16.666667%;
 }
@@ -2020,7 +2007,6 @@ html {
   flex: 1 1 0%;
 }
 
->>>>>>> main
 .grow {
   flex-grow: 1;
 }
@@ -2048,7 +2034,6 @@ html {
 .auto-cols-max {
   grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
-<<<<<<< HEAD
 }
 
 .grid-flow-col {
@@ -2057,12 +2042,6 @@ html {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-=======
-}
-
-.grid-flow-col {
-  grid-auto-flow: column;
->>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 }
 
 .grid-cols-3 {
@@ -2077,26 +2056,22 @@ html {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-=======
+}
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
->>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 }
 
 .grid-rows-1 {
   grid-template-rows: repeat(1, minmax(0, 1fr));
 }
 
->>>>>>> main
+
 .grid-rows-2 {
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
@@ -2125,16 +2100,10 @@ html {
   place-items: start;
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 .content-center {
   align-content: center;
 }
 
-=======
->>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
->>>>>>> main
 .items-start {
   align-items: flex-start;
 }
@@ -2173,13 +2142,10 @@ html {
 
 .gap-5 {
   gap: 1.25rem;
-<<<<<<< HEAD
-=======
 }
 
 .gap-y-7 {
   row-gap: 1.75rem;
->>>>>>> 9c8ad170d0986e63fb25e08a73cc81d7a89c45f8
 }
 
 .gap-7 {
@@ -2240,8 +2206,6 @@ html {
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
-<<<<<<< HEAD
-=======
 .border-green-600 {
   --tw-border-opacity: 1;
   border-color: rgb(22 163 74 / var(--tw-border-opacity));
@@ -2262,7 +2226,6 @@ html {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
->>>>>>> main
 .bg-base-100 {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--b1) / var(--tw-bg-opacity));
