@@ -6,8 +6,8 @@ import CalendarPage from './components/CalendarPage';
 
 import Decision from './logic/Decision';
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
-import LeagueTable from './components/LeagueTable';
-import LeagueTableCard from './components/LeagueTableCard';
+
+
 
 
 import SquadPage from './components/squad/SquadPage';
@@ -28,7 +28,7 @@ import SubmitForm from './components/SubmitForm';
 import PlayerPage from './pages/PlayerPage';
 import EmailPage from './components/EmailPage';
 import LeagueCard from './components/LeagueCard';
-import LeagueTableCard from './components/LeagueTableCard';
+import LeagueTableCard from './components/HomePageCard';
 import LeagueTable from './components/LeagueTable';
 import NavBar from './components/NavBar';
 import PlayerDevelopment from './components/PlayerDevelopment';

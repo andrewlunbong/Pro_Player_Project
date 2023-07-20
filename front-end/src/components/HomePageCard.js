@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom';
 import LeagueTable from "./LeagueTable";
 import PlayerDevelopment from "./PlayerDevelopment";
 
-const LeagueTableCard = () => {
+const HomePageCard = () => {
   return (
-    <div className="m-auto mt-6 mb-6 w-10/12">
+    <div className="m-auto mt-6 mb-6 w-10/12 ">
 
     <div className="grid grid-cols-3  grid-rows-2 gap-2 gap-y-7">
       
-        <div className="card shadow-xl h-auto  ">
-          <figure className="px-10 pt-7">
+        <div className="card shadow-xl h-auto pb-40 ">
+          <figure className="px-40 pt-7 ">
             {/* <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" /> */}
             <img src="https://fifastatic.fifaindex.com/FIFA23/teams/light/10.png" alt="Logo"  />
           </figure>
-          <div className="card-body items-center text-center">
-            <p>Saturday, Feb 10, 2023</p>
-            <p>AWAY vs Arsenal</p>
+          <div className="card-body items-center text-center ">
+            <p>Saturday, Aug 12, 2023</p>
+            <p>AWAY vs Mancity</p>
             <div className="card-actions">
               <Link to="/match" className="btn btn-primary">Play Match</Link>
             </div>
@@ -24,48 +24,42 @@ const LeagueTableCard = () => {
         </div>
 
         <div className="card  shadow-xl col-span-2  ">
-          <figure className="px-10 pt-10">
-            {/* <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" /> */}
-          </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">News</h2>
-            <p>Player of the Month</p>
             <div className="card-actions"></div>
           </div>
         </div>
 
 
       
-        <div className="card  shadow-xl row-span-4 ">
-          <figure className="px-10 pt-10">
-            {/* <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" /> */}
-          </figure>
+        <Link to="/league-table" className="card shadow-xl row-span-1 items-center text-center ">
+        <h2 className="card-title ">League Table</h2>
+        <figure className="px-20 pt-7">
+          <img src="https://e0.365dm.com/18/08/2048x1152/skysports-graphic-premier-league_4377324.jpg?20180801105247" alt="Logo"  />
+        </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">League Table</h2>
             <div className="card-actions"></div>
-            <LeagueTable/>
-            <Link to="/league-table" className="btn btn-primary">View Standings</Link>
+            <LeagueTable />
+            </div>
+        </Link>
 
-          </div>
-        </div>
-
-        <div className="card  shadow-xl row-span-4">
-          <figure className="px-10 pt-10">
-            {/* <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" /> */}
-          </figure>
-          <div className="card-body items-center text-center">
+        <div className="card  shadow-xl row-span-1">
+        <div className="card-body items-center text-center">
             <h2 className="card-title">Notifications</h2>
+            <figure className="px-20 pt-7">
+            <img src="https://www.freepnglogos.com/uploads/email-logo-png-27.png" alt="Logo"  />
+          </figure>
             <div className="card-actions"></div>
             <Link to="/email" className="btn btn-primary">View Emails</Link>
           </div>
         </div>
 
-        <div className="card  shadow-xl row-span-4">
-          <figure className="px-10 pt-10">
-            {/* <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" /> */}
-          </figure>
+        <div className="card  shadow-xl row-span-1">
           <div className="card-body items-center text-center">
             <h2 className="card-title">Development</h2>
+          <figure className="px-20 pt-7">
+            <img src="https://freepngimg.com/download/football/66114-soccer-photography-football-royalty-free-player-stock-playing.png" alt="Logo"  />
+          </figure>
             <div className="card-actions"></div>
             <Link to="/player-development" className="btn btn-primary">My Development</Link>
             </div>
@@ -76,7 +70,7 @@ const LeagueTableCard = () => {
   );
 };
 
-export default LeagueTableCard;
+export default HomePageCard;
 
     
     
