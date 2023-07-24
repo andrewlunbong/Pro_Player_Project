@@ -4,6 +4,7 @@ import LeagueTable from "./LeagueTable";
 import PlayerDevelopment from "./PlayerDevelopment";
 
 const HomePageCard = () => {
+const LeagueTableCard = ({ourPlayer}) => {
   return (
     <div className="m-auto mt-6 mb-6 w-10/12 ">
 
@@ -12,7 +13,7 @@ const HomePageCard = () => {
         <div className="card shadow-xl h-auto pb-40 ">
           <figure className="px-40 pt-7 ">
             {/* <img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" className="rounded-xl" /> */}
-            <img src="https://fifastatic.fifaindex.com/FIFA23/teams/light/10.png" alt="Logo"  />
+            <img src={ourPlayer.team.badge} alt="Logo"  />
           </figure>
           <div className="card-body items-center text-center ">
             <p>Saturday, Aug 12, 2023</p>

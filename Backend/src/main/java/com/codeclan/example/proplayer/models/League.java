@@ -23,8 +23,9 @@ public class League implements Serializable {
     private String logo;
 
     @OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
+
     @JsonIgnoreProperties({"league"})
-    //You can use JsonBackReference here as an alternative
+
     private List<Team> teams;
 
     @OneToMany(mappedBy = "league", fetch = FetchType.LAZY)
