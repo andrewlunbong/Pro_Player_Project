@@ -9,8 +9,8 @@ import Timer from './components/match/Timer';
 import PlayerDetails from './components/PlayerDetails';
 import './App.css';
 import PlayerSeasonStats from './components/PlayerSeasonStats.js';
-import LeagueTable from './components/LeagueTable';
-import LeagueTableCard from './components/LeagueTableCard';
+
+
 
 
 import ProplayerService from './services/ProplayerService';
@@ -27,6 +27,8 @@ import SubmitForm from './components/SubmitForm';
 import PlayerPage from './pages/PlayerPage';
 import EmailPage from './components/EmailPage';
 import LeagueCard from './components/LeagueCard';
+import HomePageCard from './components/HomePageCard';
+import LeagueTable from './components/LeagueTable';
 
 
 import NavBar from './components/NavBar';
