@@ -37,31 +37,18 @@ The Pro Player Project is an interactive application where users can create thei
 - Players can have a lifestyle (e.g., fitness, diet) affecting their performance.
 - Users can transfer players to different teams.
 
-## Why Are We Doing This Project?
-
-The Pro Player Project was born out of our collective passion for football and our desire to create an immersive experience that allows users to engage with the sport in a unique way. We wanted to develop a project that would not only entertain users but also provide them with a glimpse into the life of a football player.
-
-By creating this project, we aim to provide users with an opportunity to experience what it's like to be a football player. Through the interactive gameplay, users can make strategic decisions, improve their player's skills, and witness the impact of their choices on the player's performance and the team's success.
-
-We believe that this project will not only entertain football enthusiasts but also deepen their understanding and appreciation for the game. It allows users to step into the shoes of a football player, face challenges, make decisions, and witness the consequences, creating a more immersive and engaging experience.
-
-Our goal is to create an enjoyable and realistic virtual football experience that brings joy, excitement, and a deeper connection to the sport for users. We hope that through this project, users can unleash their passion for football and have a truly immersive and memorable experience.
-
-So, let's dive in and start the journey to become a successful football player!
-
 ## Tech Stack
 
 **Frontend:**
 - React
-
-**Database:**
-- For Teams: Name of the team, league of the team, attacking stats, midfield stats, and defense stats.
-- For Players: Pictures of the player, player's details (e.g., name, D.O.B, position, age, stats, and overall).
-- It is a one-to-many database for players in a team.
+- Daisy UI
+- Tailwind CSS
 
 **Backend:**
 - Java
 - SQL
+- Spring
+- Python
 
 **Web Scraping:**
 - Python for web scraping data for teams, leagues, and players from https://www.fifaindex.com/teams/?league=14&order=desc.
