@@ -20,6 +20,11 @@ The Pro Player Project is an interactive application where users can create thei
 
 6. **Dynamic League Table**: The league table reflects the results of the user's team and other competing teams, providing a realistic and immersive experience.
 
+## Features
+![you! (1)](https://github.com/andrewlunbong/Pro_Player_Project/assets/128614599/f1a81126-9240-44c4-96d0-cbbc73099b80)
+
+
+
 ## MVP (Minimum Viable Product)
 
 - Users can create a football player.
