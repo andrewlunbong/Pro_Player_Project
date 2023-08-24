@@ -72,6 +72,10 @@ The Pro Player Project is an interactive application where users can create thei
 
 - Used to keep track of goals for two teams.
 
-## License
+## Contributors
+-Ittiphon Lunbong
+-Angel Gonzalez
+-Panagiotis Tsamoutalis
+-Alex Ofori
 
-This project is licensed under the [MIT License](https://example.com/pro_player_license).
+
